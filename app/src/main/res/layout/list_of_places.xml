@@ -9,14 +9,14 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="center_vertical"
-        android:text=" "
+        android:text=""
         android:textSize="25dp"
         android:textStyle="bold" />
 
     <ListView
         android:id="@+id/mainListView"
         android:layout_width="match_parent"
-        android:layout_height="440dp"
+        android:layout_height="wrap_content"
         android:listSelector="@drawable/list_selector"
         android:layout_gravity="center_horizontal" />
 
@@ -25,6 +25,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="bottom"
+        android:layout_alignParentBottom="true"
         android:text="Give me Route" />
 
 </LinearLayout>
