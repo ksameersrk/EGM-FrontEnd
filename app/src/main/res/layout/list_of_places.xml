@@ -9,7 +9,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="center_vertical"
-        android:text="Bang to Mys"
+        android:text=" "
         android:textSize="25dp"
         android:textStyle="bold" />
 
@@ -17,6 +17,7 @@
         android:id="@+id/mainListView"
         android:layout_width="match_parent"
         android:layout_height="440dp"
+        android:listSelector="@drawable/list_selector"
         android:layout_gravity="center_horizontal" />
 
     <Button
