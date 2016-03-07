@@ -1,6 +1,7 @@
 package com.example.jeevan.splash;
 
 import android.app.Activity;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.util.Log;
 import android.util.SparseBooleanArray;
@@ -27,7 +28,28 @@ public class ListOfPlaces extends Activity
             "Eco Tourism Park",
             "Jawaharlal Nehru Planetarium",
             "Panambur Beach",
-            "Tipu Sultan's Fort"
+            "1Bekal Fort",
+            "1Bengaluru Palace",
+            "1Brindavan Gardens",
+            "1Ducati Bengaluru",
+            "1Eco Tourism Park",
+            "1Jawaharlal Nehru Planetarium",
+            "1Panambur Beach",
+            "2Bekal Fort",
+            "2Bengaluru Palace",
+            "2Brindavan Gardens",
+            "2Ducati Bengaluru",
+            "2Eco Tourism Park",
+            "2Jawaharlal Nehru Planetarium",
+            "2Panambur Beach",
+            "3Bekal Fort",
+            "3Bengaluru Palace",
+            "3Brindavan Gardens",
+            "3Ducati Bengaluru",
+            "3Eco Tourism Park",
+            "3Jawaharlal Nehru Planetarium",
+            "3Panambur Beach",
+            "4Tipu Sultan's Fort"
     };
     private ListView mainListView;
     private ArrayAdapter<String> listAdapter;
@@ -77,6 +99,19 @@ public class ListOfPlaces extends Activity
                     }
                 }
                 Log.v("list", selected_places.toString());
+                for(int k = 0; k < adapterView.getChildCount(); k++)
+                {
+
+                    adapterView.getChildAt(k).setBackgroundColor(Color.TRANSPARENT);
+                }
+                for(int k = 0; k < a.size(); k++)
+                {
+                    if(a.valueAt(k))
+                    adapterView.getChildAt(a.keyAt(k)).setBackgroundColor(Color.GREEN);
+                    else
+                        adapterView.getChildAt(a.keyAt(k)).setBackgroundColor(Color.TRANSPARENT);
+                }
+                //view.setBackgroundColor(Color.GREEN);
             }
         });
     }
