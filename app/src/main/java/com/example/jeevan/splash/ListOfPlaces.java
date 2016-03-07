@@ -6,9 +6,11 @@ import android.os.Bundle;
 import android.util.Log;
 import android.util.SparseBooleanArray;
 import android.view.View;
+import android.widget.AbsListView;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
+import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.TextView;
 
@@ -20,6 +22,9 @@ import java.util.HashSet;
  */
 public class ListOfPlaces extends Activity
 {
+    /*
+    There is bug if the list is greater then the height of the view
+     */
     String[] places = {
             "Bekal Fort",
             "Bengaluru Palace",
@@ -28,33 +33,28 @@ public class ListOfPlaces extends Activity
             "Eco Tourism Park",
             "Jawaharlal Nehru Planetarium",
             "Panambur Beach",
-            "1Bekal Fort",
-            "1Bengaluru Palace",
-            "1Brindavan Gardens",
-            "1Ducati Bengaluru",
-            "1Eco Tourism Park",
-            "1Jawaharlal Nehru Planetarium",
-            "1Panambur Beach",
-            "2Bekal Fort",
-            "2Bengaluru Palace",
-            "2Brindavan Gardens",
-            "2Ducati Bengaluru",
-            "2Eco Tourism Park",
-            "2Jawaharlal Nehru Planetarium",
-            "2Panambur Beach",
-            "3Bekal Fort",
-            "3Bengaluru Palace",
-            "3Brindavan Gardens",
-            "3Ducati Bengaluru",
-            "3Eco Tourism Park",
-            "3Jawaharlal Nehru Planetarium",
-            "3Panambur Beach",
-            "4Tipu Sultan's Fort"
+            "Bekal Fort",
+            "Bengaluru Palace",
+            "Brindavan Gardens",
+            "Ducati Bengaluru",
+            "Eco Tourism Park",
+            "Jawaharlal Nehru Planetarium",
+            "Panambur Beach",
+            "Bekal Fort",
+            "Bengaluru Palace",
+            "Brindavan Gardens",
+            "Ducati Bengaluru",
+            "Eco Tourism Park",
+            "Jawaharlal Nehru Planetarium",
+            "Panambur Beach",
+            "Tipu Sultan's Fort"
     };
     private ListView mainListView;
     private ArrayAdapter<String> listAdapter;
     private String my_sel_items;
     private ArrayList<String> selected_places;
+    private  ArrayList<Integer> selectedIds;
+    Integer topRow = new Integer(0);
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -91,14 +91,28 @@ public class ListOfPlaces extends Activity
                 my_sel_items = "";
                 SparseBooleanArray a = mainListView.getCheckedItemPositions();
                 selected_places = new ArrayList<String>();
+                selectedIds = new ArrayList<Integer>();
                 for (int j = 0; j < a.size(); j++) {
                     Log.v("value size : ", a.size() + "");
                     if (a.valueAt(j)) {
                         my_sel_items = (String) mainListView.getAdapter().getItem(a.keyAt(j));
                         selected_places.add(my_sel_items);
+                        selectedIds.add(new Integer(a.keyAt(j)));
+                    }
+                    else
+                    {
+                        int tmp = a.keyAt(j);
+                        if(selectedIds.contains(tmp))
+                        {
+                            selectedIds.remove(new Integer(tmp));
+                        }
                     }
                 }
+                topRow = new Integer(mainListView.getFirstVisiblePosition());
+                Log.v("First : ", mainListView.getFirstVisiblePosition()+"");
+                Log.v("Last  : ", mainListView.getLastVisiblePosition()+"");
                 Log.v("list", selected_places.toString());
+                Log.v("list", selectedIds.toString());
                 for(int k = 0; k < adapterView.getChildCount(); k++)
                 {
 
@@ -106,13 +120,20 @@ public class ListOfPlaces extends Activity
                 }
                 for(int k = 0; k < a.size(); k++)
                 {
-                    if(a.valueAt(k))
-                    adapterView.getChildAt(a.keyAt(k)).setBackgroundColor(Color.GREEN);
-                    else
+                    Log.v("a.value ", a.keyAt(k)+"");
+                    if(a.valueAt(k) && adapterView.getChildAt(a.keyAt(k)) != null)
+                    {
+                        adapterView.getChildAt(a.keyAt(k)).setBackgroundColor(Color.GREEN);
+                        Log.v("if : value ", a.keyAt(k) + "");
+                    }
+                    else if(adapterView.getChildAt(a.keyAt(k)) != null)
+                    {
                         adapterView.getChildAt(a.keyAt(k)).setBackgroundColor(Color.TRANSPARENT);
+                        Log.v("else : value ", a.keyAt(k) + "");
+                    }
                 }
                 //view.setBackgroundColor(Color.GREEN);
             }
         });
+        }
     }
-}
