@@ -31,10 +31,12 @@ public class FreeStyle extends Activity {
         EditText dest = (EditText) findViewById(R.id.editText2);
         if(!src.getText().toString().equals("") && !dest.getText().toString().equals(""))
         {
-            String tmp = src.getText().toString() + " to " + dest.getText().toString();
+            String source = src.getText().toString();
+            String destination = dest.getText().toString();
             Intent i = new Intent(FreeStyle.this, ListOfPlaces.class);
             Bundle b = new Bundle();
-            b.putString("header", tmp);
+            b.putString("source", source);
+            b.putString("destination", destination);
             i.putExtras(b);
             startActivity(i);
         }

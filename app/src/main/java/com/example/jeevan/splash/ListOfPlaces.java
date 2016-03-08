@@ -1,6 +1,7 @@
 package com.example.jeevan.splash;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.util.Log;
@@ -13,6 +14,7 @@ import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.HashSet;
@@ -53,8 +55,10 @@ public class ListOfPlaces extends Activity
     private ArrayAdapter<String> listAdapter;
     private String my_sel_items;
     private ArrayList<String> selected_places;
-    private  ArrayList<Integer> selectedIds;
-    Integer topRow = new Integer(0);
+    private ArrayList<Integer> selectedIds;
+    private String source = null;
+    private String destination = null;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -65,20 +69,23 @@ public class ListOfPlaces extends Activity
         //set header
         final TextView t = (TextView) findViewById(R.id.headerText);
         Bundle bundle = getIntent().getExtras();
-        String tmp = bundle.getString("header");
-        t.setText(tmp);
+        source = bundle.getString("source");
+        destination = bundle.getString("destination");
+        t.setText(source +" -> "+ destination);
 
         //initialize
         my_sel_items = "";
 
         // Find the ListView resource.
         mainListView = (ListView) findViewById(R.id.mainListView);
+
         //create adapter
-        listAdapter = new ArrayAdapter<String>(this,
-                R.layout.simple_row,
-                R.id.rowTextView,
+        listAdapter = new ArrayAdapter<String>(
+                this,
+                android.R.layout.simple_list_item_multiple_choice,
                 places
         );
+
         //set Adapter
         mainListView.setAdapter(listAdapter);
         mainListView.setChoiceMode(ListView.CHOICE_MODE_MULTIPLE);
@@ -88,6 +95,7 @@ public class ListOfPlaces extends Activity
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
                 view.setSelected(true);
+
                 my_sel_items = "";
                 SparseBooleanArray a = mainListView.getCheckedItemPositions();
                 selected_places = new ArrayList<String>();
@@ -96,6 +104,7 @@ public class ListOfPlaces extends Activity
                     Log.v("value size : ", a.size() + "");
                     if (a.valueAt(j)) {
                         my_sel_items = (String) mainListView.getAdapter().getItem(a.keyAt(j));
+                        //Toast.makeText(ListOfPlaces.this,my_sel_items,Toast.LENGTH_LONG).show();
                         selected_places.add(my_sel_items);
                         selectedIds.add(new Integer(a.keyAt(j)));
                     }
@@ -108,32 +117,12 @@ public class ListOfPlaces extends Activity
                         }
                     }
                 }
-                topRow = new Integer(mainListView.getFirstVisiblePosition());
+
                 Log.v("First : ", mainListView.getFirstVisiblePosition()+"");
                 Log.v("Last  : ", mainListView.getLastVisiblePosition()+"");
                 Log.v("list", selected_places.toString());
                 Log.v("list", selectedIds.toString());
-                for(int k = 0; k < adapterView.getChildCount(); k++)
-                {
-
-                    adapterView.getChildAt(k).setBackgroundColor(Color.TRANSPARENT);
-                }
-                for(int k = 0; k < a.size(); k++)
-                {
-                    Log.v("a.value ", a.keyAt(k)+"");
-                    if(a.valueAt(k) && adapterView.getChildAt(a.keyAt(k)) != null)
-                    {
-                        adapterView.getChildAt(a.keyAt(k)).setBackgroundColor(Color.GREEN);
-                        Log.v("if : value ", a.keyAt(k) + "");
-                    }
-                    else if(adapterView.getChildAt(a.keyAt(k)) != null)
-                    {
-                        adapterView.getChildAt(a.keyAt(k)).setBackgroundColor(Color.TRANSPARENT);
-                        Log.v("else : value ", a.keyAt(k) + "");
-                    }
-                }
-                //view.setBackgroundColor(Color.GREEN);
             }
         });
-        }
     }
+}
