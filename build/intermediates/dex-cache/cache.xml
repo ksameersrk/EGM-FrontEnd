@@ -2,46 +2,60 @@
 <items version="2" >
 
     <item
-        jar="/home/ksameersrk/Software/Android/AndroidStudioProjects/EGM-FrontEnd/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/jars/classes.jar"
+        jar="C:\Users\Sarthak\Desktop\EGM-FrontEnd-master\app\build\intermediates\exploded-aar\com.android.support\design\23.2.1\jars\classes.jar"
         jumboMode="false"
         revision="21.1.2"
-        sha1="5c5699834e9722f1c288fea2de82725d078ba127">
-        <dex dex="/home/ksameersrk/Software/Android/AndroidStudioProjects/EGM-FrontEnd/app/build/intermediates/pre-dexed/debug/classes-1922bab0d6b8852bfac41cc643ac3536c1f8a6e5.jar" />
+        sha1="72961d8b453b46e277702f18de9d210bc019e36e">
+        <dex dex="C:\Users\Sarthak\Desktop\EGM-FrontEnd-master\app\build\intermediates\pre-dexed\debug\classes-f2e322a9aa05f84a0167db8206910397a0a7f03c.jar" />
     </item>
     <item
-        jar="/home/ksameersrk/Software/Android/AndroidStudioProjects/EGM-FrontEnd/app/build/intermediates/exploded-aar/com.android.support/design/23.1.1/jars/classes.jar"
+        jar="C:\Users\Sarthak\Desktop\EGM-FrontEnd-master\app\build\intermediates\exploded-aar\com.android.support\support-v4\23.2.1\jars\libs\internal_impl-23.2.1.jar"
         jumboMode="false"
         revision="21.1.2"
-        sha1="379471b2bd17d9737c050345c08e8c7d16589784">
-        <dex dex="/home/ksameersrk/Software/Android/AndroidStudioProjects/EGM-FrontEnd/app/build/intermediates/pre-dexed/debug/classes-f14ed44e37f3b21cb469755a04e4da1f21740571.jar" />
+        sha1="607a3d0b8013b4ccbfeb0b7cb293351994e021fb">
+        <dex dex="C:\Users\Sarthak\Desktop\EGM-FrontEnd-master\app\build\intermediates\pre-dexed\debug\internal_impl-23.2.1-2ce8ec359e36280088c38d472888e8e3353a9694.jar" />
     </item>
     <item
-        jar="/home/ksameersrk/Software/Android/AndroidStudioProjects/EGM-FrontEnd/app/build/intermediates/exploded-aar/com.android.support/support-v4/23.1.1/jars/libs/internal_impl-23.1.1.jar"
+        jar="C:\Users\Sarthak\Desktop\EGM-FrontEnd-master\app\build\intermediates\exploded-aar\com.android.support\support-v4\23.2.1\jars\classes.jar"
         jumboMode="false"
         revision="21.1.2"
-        sha1="a4de9c81ae239414e1ed0f86441b02abaf29bca9">
-        <dex dex="/home/ksameersrk/Software/Android/AndroidStudioProjects/EGM-FrontEnd/app/build/intermediates/pre-dexed/debug/internal_impl-23.1.1-a5aeba117a033c3872b0afe537511109bc3573d2.jar" />
+        sha1="3be474b1b21b31cf2fa93fe6bd641ae108d96452">
+        <dex dex="C:\Users\Sarthak\Desktop\EGM-FrontEnd-master\app\build\intermediates\pre-dexed\debug\classes-2b6de2514945853eaac96ea3d5448f18c7cdcb32.jar" />
     </item>
     <item
-        jar="/home/ksameersrk/Software/Android/AndroidStudioProjects/EGM-FrontEnd/app/build/intermediates/exploded-aar/com.android.support/recyclerview-v7/23.1.1/jars/classes.jar"
+        jar="C:\Users\Sarthak\Desktop\EGM-FrontEnd-master\app\build\intermediates\exploded-aar\com.android.support\animated-vector-drawable\23.2.1\jars\classes.jar"
         jumboMode="false"
         revision="21.1.2"
-        sha1="09c5e804bc67fc0580360043dff067df574a60d4">
-        <dex dex="/home/ksameersrk/Software/Android/AndroidStudioProjects/EGM-FrontEnd/app/build/intermediates/pre-dexed/debug/classes-66f4593e20a26a9b61022b910d1c097518b025ce.jar" />
+        sha1="3469cb457f10f74c28cbc05f069b6c894f6cbdd0">
+        <dex dex="C:\Users\Sarthak\Desktop\EGM-FrontEnd-master\app\build\intermediates\pre-dexed\debug\classes-77ba2cf94cf0547313743fdfdd7e3b72c846feb1.jar" />
     </item>
     <item
-        jar="/home/ksameersrk/Software/Android/android-sdk/extras/android/m2repository/com/android/support/support-annotations/23.1.1/support-annotations-23.1.1.jar"
+        jar="C:\Users\Sarthak\Desktop\EGM-FrontEnd-master\app\build\intermediates\exploded-aar\com.android.support\support-vector-drawable\23.2.1\jars\classes.jar"
         jumboMode="false"
         revision="21.1.2"
-        sha1="8d680ba5a623724d1fb0e81c36a790f023a6cede">
-        <dex dex="/home/ksameersrk/Software/Android/AndroidStudioProjects/EGM-FrontEnd/app/build/intermediates/pre-dexed/debug/support-annotations-23.1.1-abcc4dfca5ade532522a3edc0019599af66ac871.jar" />
+        sha1="673d77a5bbddd766037f088e775df525c46407f0">
+        <dex dex="C:\Users\Sarthak\Desktop\EGM-FrontEnd-master\app\build\intermediates\pre-dexed\debug\classes-c0e7c912ecabf1808e453cb54cb60c244d1f3cfe.jar" />
     </item>
     <item
-        jar="/home/ksameersrk/Software/Android/AndroidStudioProjects/EGM-FrontEnd/app/build/intermediates/exploded-aar/com.android.support/support-v4/23.1.1/jars/classes.jar"
+        jar="C:\Users\Sarthak\AppData\Local\Android\sdk\extras\android\m2repository\com\android\support\support-annotations\23.2.1\support-annotations-23.2.1.jar"
         jumboMode="false"
         revision="21.1.2"
-        sha1="6cbc7773921fcfedbe55657578f0cbfe614778dc">
-        <dex dex="/home/ksameersrk/Software/Android/AndroidStudioProjects/EGM-FrontEnd/app/build/intermediates/pre-dexed/debug/classes-ff008050dfe12534aec2234f7fe3aa28c08db583.jar" />
+        sha1="ccb693bc0774fcb637246f7360de25b4af7df318">
+        <dex dex="C:\Users\Sarthak\Desktop\EGM-FrontEnd-master\app\build\intermediates\pre-dexed\debug\support-annotations-23.2.1-e277e1b39ce229ed08fcd29bdb4a8dd1bc4435f2.jar" />
+    </item>
+    <item
+        jar="C:\Users\Sarthak\Desktop\EGM-FrontEnd-master\app\build\intermediates\exploded-aar\com.android.support\recyclerview-v7\23.2.1\jars\classes.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="e3885783ff8926ed9e2fdcd16816c2e1e73e7aee">
+        <dex dex="C:\Users\Sarthak\Desktop\EGM-FrontEnd-master\app\build\intermediates\pre-dexed\debug\classes-d3fc04abb50cdb907a0688dc500c46358bfc3eda.jar" />
+    </item>
+    <item
+        jar="C:\Users\Sarthak\Desktop\EGM-FrontEnd-master\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\23.2.1\jars\classes.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="e4d0cbb0b999604b349062f0214a0a228a7fd151">
+        <dex dex="C:\Users\Sarthak\Desktop\EGM-FrontEnd-master\app\build\intermediates\pre-dexed\debug\classes-3a0e58c865572f6acb4ff15a47a8e0bc0c47ac4c.jar" />
     </item>
 
 </items>
