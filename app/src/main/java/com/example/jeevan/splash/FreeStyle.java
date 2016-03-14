@@ -73,7 +73,7 @@ public class FreeStyle extends Activity implements View.OnClickListener {
         try {
 
 
-            a = new URL("http://192.168.185.110:8000");
+            a = new URL("http://10.0.2.2:8000");
 
         } catch (MalformedURLException e) {
             e.printStackTrace();

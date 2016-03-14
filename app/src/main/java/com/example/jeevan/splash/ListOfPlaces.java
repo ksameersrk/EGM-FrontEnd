@@ -183,7 +183,7 @@ public class ListOfPlaces extends Activity implements View.OnClickListener {
                 try {
 
 
-                    a = new URL("http://192.168.185.110:8000/hello");
+                    a = new URL("http://10.0.2.2:8000/hello");
 
                 } catch (MalformedURLException e) {
                     e.printStackTrace();

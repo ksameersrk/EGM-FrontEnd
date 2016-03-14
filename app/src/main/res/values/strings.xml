@@ -3,4 +3,6 @@
     <string name="action_settings">Settings</string>
     <string name="title_activity_maps">Map</string>
     <string name="title_activity_maps2">Map</string>
+    <string name="google_app_id">default-demo-app-53a76</string>
+    <string name="IP_ADDR">https://10.0.2.2:8000</string>
 </resources>
