@@ -4,39 +4,22 @@ package com.example.jeevan.splash;
  * Created by jeevan on 3/3/16.
  */
 import android.app.Activity;
-import android.content.ContentValues;
 import android.content.Context;
 import android.content.Intent;
-import android.nfc.Tag;
 import android.os.AsyncTask;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
-import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.TextView;
-import android.widget.Toast;
 
-import org.json.JSONArray;
-import org.json.JSONException;
-import org.json.JSONObject;
-
-import java.io.BufferedOutputStream;
 import java.io.BufferedReader;
-import java.io.BufferedWriter;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.io.OutputStream;
-import java.io.OutputStreamWriter;
-import java.io.PrintWriter;
 import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
-import java.net.URLEncoder;
-import java.sql.Array;
-import java.util.ArrayList;
 
 import static com.example.jeevan.splash.R.layout.free_style;
 
@@ -67,13 +50,13 @@ public class FreeStyle extends Activity implements View.OnClickListener {
     public void onClick(View view) {
 
         URL a = null;
-        source = ((EditText) findViewById(R.id.editText)).getText().toString();
+        source = ((EditText) findViewById(R.id.user_location)).getText().toString();
         destination = ((EditText) findViewById(R.id.editText2)).getText().toString();
 
         try {
 
 
-            a = new URL("http://10.0.2.2:8000");
+            a = new URL("http://192.168.0.106:8000/f1m2");
 
         } catch (MalformedURLException e) {
             e.printStackTrace();

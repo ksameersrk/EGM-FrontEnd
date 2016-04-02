@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<AbsoluteLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:weightSum="1"
@@ -7,24 +7,29 @@
 
     <TextView
         android:layout_width="300dp"
-        android:layout_height="40dp"
+        android:layout_height="43dp"
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:text="Enter Location"
         android:textStyle="bold"
         android:textSize="22sp"
         android:id="@+id/textView"
         android:layout_alignParentTop="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+        android:layout_alignLeft="@+id/user_location"
+        android:layout_alignStart="@+id/user_location"
+        android:layout_x="39dp"
+        android:layout_y="30dp"
+        android:textAlignment="center" />
 
     <EditText
         android:layout_width="350dp"
         android:layout_height="50dp"
-        android:id="@+id/editText"
+        android:id="@+id/user_location"
         android:layout_marginTop="2dp"
         android:textSize="@dimen/activity_horizontal_margin"
         android:layout_below="@+id/textView"
-        android:layout_centerHorizontal="true" />
+        android:layout_centerHorizontal="true"
+        android:layout_x="13dp"
+        android:layout_y="69dp" />
 
     <TextView
         android:layout_width="100dp"
@@ -34,28 +39,46 @@
         android:textStyle="bold"
         android:textSize="22sp"
         android:id="@+id/textView2"
-        android:layout_below="@+id/editText"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginTop="30dp"
-        />
+        android:layout_below="@+id/user_location"
+        android:layout_alignRight="@+id/radius"
+        android:layout_alignEnd="@+id/radius"
+        android:layout_x="144dp"
+        android:layout_y="131dp" />
 
     <SeekBar
+        android:layout_width="282dp"
+        android:layout_height="47dp"
+        android:id="@+id/seekBar"
+        android:max="100"
+        android:progress="50"
+        android:indeterminate="false"
+        android:layout_below="@+id/textView2"
+        android:layout_above="@+id/radius"
+        android:layout_alignLeft="@+id/textView2"
+        android:layout_alignStart="@+id/textView2"
+        android:layout_alignRight="@+id/textView"
+        android:layout_alignEnd="@+id/textView"
+        android:layout_x="39dp"
+        android:layout_y="190dp" />
+
+    <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/seekBar"
-        android:max="500"
-        android:layout_below="@+id/editText"
-        android:layout_toRightOf="@+id/textView2"
-        android:layout_alignBottom="@+id/textView2"
-        android:layout_alignRight="@+id/editText"
-        android:layout_alignEnd="@+id/editText" />
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:id="@+id/radius"
+        android:hint="radius"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true"
+        android:layout_x="163dp"
+        android:layout_y="174dp" />
 
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="2dp"
-        android:background="@android:color/darker_gray"
-        android:layout_below="@+id/seekBar"/>
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Get Places"
+        android:id="@+id/getPlaces"
+        android:layout_x="130dp"
+        android:layout_y="275dp" />
 
 
-</RelativeLayout>
+</AbsoluteLayout>

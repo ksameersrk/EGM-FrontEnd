@@ -21,7 +21,7 @@
     <EditText
         android:layout_width="350dp"
         android:layout_height="50dp"
-        android:id="@+id/editText"
+        android:id="@+id/user_location"
         android:layout_marginTop="5dp"
         android:textColor="#cccc1e"
         android:backgroundTint="@color/colorAccent"
@@ -37,7 +37,7 @@
         android:textStyle="bold"
         android:textSize="22sp"
         android:id="@+id/textView2"
-        android:layout_below="@+id/editText"
+        android:layout_below="@+id/user_location"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
         android:layout_marginTop="30dp"
