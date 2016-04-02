@@ -20,6 +20,8 @@ import java.util.List;
 public class MapsActivity1 extends FragmentActivity implements OnMapReadyCallback
 {
 
+    String json_places;
+
     private GoogleMap mMap;
     private GoogleApiClient mGoogleApiClient;
     List<Double> lat = null;
@@ -32,7 +34,8 @@ public class MapsActivity1 extends FragmentActivity implements OnMapReadyCallbac
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_maps);
-
+        Bundle b = getIntent().getExtras();
+        json_places = b.getString("json_places");
         // Obtain the SupportMapFragment and get notified when the map is ready to be used.
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
                 .findFragmentById(R.id.map);
@@ -55,7 +58,8 @@ public class MapsActivity1 extends FragmentActivity implements OnMapReadyCallbac
 
         // Add a marker in Sydney and move the camera
         try{
-            jObject = new JSONObject("{\"places_lat\": [1.1, 2.2, 3.3], \"places_long\": [4.4, 5.5, 6.6]}, \"users_lat\": [7.1, 8.2, 9.3], \"users_long\": [0.4, 1.5, 2.6]}, \"all_details\":[[\"ABC\", 4.4, \"abc, xyz, 123\", \"www.hello.com\"], [\"ABC\", 4.4, \"abc, xyz, 123\", \"www.hello.com\"]]");
+            jObject = new JSONObject(json_places);
+           // jObject = new JSONObject("{\"places_lat\": [1.1, 2.2, 3.3], \"places_long\": [4.4, 5.5, 6.6]}, \"users_lat\": [7.1, 8.2, 9.3], \"users_long\": [0.4, 1.5, 2.6]}, \"all_details\":[[\"ABC\", 4.4, \"abc, xyz, 123\", \"www.hello.com\"], [\"ABC\", 4.4, \"abc, xyz, 123\", \"www.hello.com\"]]");
 
 
             Log.d("onCreate", "CHECK" + jObject); //{"lat":[1.1,2.2,3.3],"long":[4.4,5.5,6.6]}
@@ -72,13 +76,13 @@ public class MapsActivity1 extends FragmentActivity implements OnMapReadyCallbac
             lon = parser2.parse(jObject);
 
             //recreating JSON object as string too long - neednt do when getting from server
-            jObject = new JSONObject("{\"users_lat\": [7.1, 8.2, 9.3], \"users_long\": [0.4, 1.5, 2.6]}, \"all_details\":[[\"ABC\", 4.4, \"abc, xyz, 123\", \"www.hello.com\"], [\"ABC\", 4.4, \"abc, xyz, 123\", \"www.hello.com\"]]");
+          //  jObject = new JSONObject("{\"users_lat\": [7.1, 8.2, 9.3], \"users_long\": [0.4, 1.5, 2.6]}, \"all_details\":[[\"ABC\", 4.4, \"abc, xyz, 123\", \"www.hello.com\"], [\"ABC\", 4.4, \"abc, xyz, 123\", \"www.hello.com\"]]");
 
             currentLat = parser3.parse(jObject);
             currentLon = parser4.parse(jObject);
 
             //recreating JSON object as string too long - neednt do when getting from server
-            jObject = new JSONObject("{\"all_details\":[[\"ABC\", 4.4, \"abc, xyz, 123\", \"www.hello.com\"], [\"EFG\", 5.4, \"ijw, xyz, 123\", \"www.bye.com\"]]}");
+          //  jObject = new JSONObject("{\"all_details\":[[\"ABC\", 4.4, \"abc, xyz, 123\", \"www.hello.com\"], [\"EFG\", 5.4, \"ijw, xyz, 123\", \"www.bye.com\"]]}");
 
             des = parser5.parse(jObject);
 
