@@ -3,11 +3,8 @@ package com.example.jeevan.splash;
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
 import android.annotation.TargetApi;
-import android.content.Context;
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
-import android.preference.PreferenceManager;
 import android.support.annotation.NonNull;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
@@ -78,7 +75,7 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
         mPhoneNumberView = (AutoCompleteTextView) findViewById(R.id.phone_number);
         populateAutoComplete();
 
-        mPasswordView = (EditText) findViewById(R.id.password);
+        mPasswordView = (EditText) findViewById(R.id.password1);
         mPasswordView.setOnEditorActionListener(new TextView.OnEditorActionListener() {
             @Override
             public boolean onEditorAction(TextView textView, int id, KeyEvent keyEvent) {
@@ -118,7 +115,7 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
             return true;
         }
         if (shouldShowRequestPermissionRationale(READ_CONTACTS)) {
-            Snackbar.make(mPhoneNumberView, R.string.permission_rationale, Snackbar.LENGTH_INDEFINITE)
+            Snackbar.make(mPhoneNumberView, R.string.login_permission_rationale, Snackbar.LENGTH_INDEFINITE)
                     .setAction(android.R.string.ok, new View.OnClickListener() {
                         @Override
                         @TargetApi(Build.VERSION_CODES.M)
@@ -169,18 +166,18 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
 
         // Check for a valid password, if the user entered one.
         if (!isPasswordValid(password)) {
-            mPasswordView.setError(getString(R.string.error_invalid_password));
+            mPasswordView.setError(getString(R.string.login_error_invalid_password));
             focusView = mPasswordView;
             cancel = true;
         }
 
         // Check for a valid phoneNumber address.
         if (TextUtils.isEmpty(phoneNumber)) {
-            mPhoneNumberView.setError(getString(R.string.error_field_required));
+            mPhoneNumberView.setError(getString(R.string.login_error_field_required));
             focusView = mPhoneNumberView;
             cancel = true;
         } else if (!isPhoneNumberValid(phoneNumber)) {
-            mPhoneNumberView.setError(getString(R.string.error_invalid_email));
+            mPhoneNumberView.setError(getString(R.string.login_error_invalid_phone_number));
             focusView = mPhoneNumberView;
             cancel = true;
         }
@@ -331,7 +328,7 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
                 }
             }
 
-            // TODO: register the new account here.
+            // TODO: return false if not registered 
             return true;
             //return false;
         }
@@ -352,7 +349,7 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
                 //startActivity(new Intent(LoginActivity.this, MainActivity.class));
                 finish();
             } else {
-                mPasswordView.setError(getString(R.string.error_incorrect_password));
+                mPasswordView.setError(getString(R.string.login_error_incorrect_password));
                 mPasswordView.requestFocus();
             }
         }
@@ -367,8 +364,7 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
     //methods for onclick
     public void callSignUp(View v)
     {
-        Intent i = new Intent(LoginActivity.this, MainActivity.class);
-        finish();
+        Intent i = new Intent(LoginActivity.this, RegistrationActivity.class);
         startActivity(i);
     }
 }
