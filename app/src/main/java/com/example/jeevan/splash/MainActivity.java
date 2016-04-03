@@ -13,6 +13,8 @@ import android.widget.ListView;
 
 public class MainActivity extends AppCompatActivity {
 
+    Bundle b = new Bundle();
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -46,6 +48,24 @@ public class MainActivity extends AppCompatActivity {
     }
     public void callFreeStyle(View v){
         startActivity(new Intent(MainActivity.this, FreeStyle.class));
+    }
+    public void callGroupTrip(View v){
+        Intent i = new Intent(MainActivity.this, LoginActivity.class);
+        b.putString("previousWindow", "GroupTrip");
+        i.putExtras(b);
+        startActivity(i);
+    }
+    public void callTravelDiary(View v){
+        Intent i = new Intent(MainActivity.this, LoginActivity.class);
+        b.putString("previousWindow", "TravelDiary");
+        i.putExtras(b);
+        startActivity(i);
+    }
+    public void callLogin(View v){
+        Intent i = new Intent(MainActivity.this, LoginActivity.class);
+        b.putString("previousWindow", "MainActivity");
+        i.putExtras(b);
+        startActivity(i);
     }
 
 

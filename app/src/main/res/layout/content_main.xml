@@ -17,7 +17,7 @@
         android:layout_height="60dp"
         android:text="FREESTYLE"
         android:id="@+id/button1"
-        android:layout_marginTop="66dp"
+        android:layout_marginTop="20dp"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         android:background="#9fba78"
@@ -68,5 +68,19 @@
         android:textStyle="bold"
         android:textColor="#ffffff"
         android:textSize="22sp"/>
+
+    <Button
+        android:layout_width="248dp"
+        android:layout_height="60dp"
+        android:text="Login"
+        android:id="@+id/button5"
+        android:layout_below="@+id/button4"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="40dp"
+        android:background="#9fba78"
+        android:textStyle="bold"
+        android:textColor="#ffffff"
+        android:textSize="22sp"
+        android:onClick="callLogin"/>
 </RelativeLayout>
 

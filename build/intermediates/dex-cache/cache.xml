@@ -2,235 +2,235 @@
 <items version="2" >
 
     <item
-        jar="C:\Users\Sarthak\Desktop\EGM-FrontEnd\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-drive\8.4.0\jars\classes.jar"
+        jar="/home/ksameersrk/Documents/se_project/EGM-FrontEnd/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-drive/8.4.0/jars/classes.jar"
         jumboMode="false"
         revision="21.1.2"
         sha1="b36f30ac5ee5d5214f4b1e2ac49f11889d58e71a">
-        <dex dex="C:\Users\Sarthak\Desktop\EGM-FrontEnd\app\build\intermediates\pre-dexed\debug\classes-e419803122667bcc17191a8af835fd5096a7dbc3.jar" />
+        <dex dex="/home/ksameersrk/Documents/se_project/EGM-FrontEnd/app/build/intermediates/pre-dexed/debug/classes-117d0a4ea30f092d990e95dcf2c9fbbabd21f0e5.jar" />
     </item>
     <item
-        jar="C:\Users\Sarthak\Desktop\EGM-FrontEnd\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-measurement\8.4.0\jars\classes.jar"
-        jumboMode="false"
-        revision="21.1.2"
-        sha1="613298b7aa012f121ce542881c0a599ebd8078f2">
-        <dex dex="C:\Users\Sarthak\Desktop\EGM-FrontEnd\app\build\intermediates\pre-dexed\debug\classes-de3d941305101d8a6026ca6cbc7b53c07bb9628b.jar" />
-    </item>
-    <item
-        jar="C:\Users\Sarthak\Desktop\EGM-FrontEnd\app\build\intermediates\exploded-aar\com.android.support\mediarouter-v7\23.0.0\jars\libs\internal_impl-23.0.0.jar"
-        jumboMode="false"
-        revision="21.1.2"
-        sha1="03d38bb042efe3e5ce27ba66b729a9523c36d8fe">
-        <dex dex="C:\Users\Sarthak\Desktop\EGM-FrontEnd\app\build\intermediates\pre-dexed\debug\internal_impl-23.0.0-6612566852b34362f555a10e52222c40ca1bddbc.jar" />
-    </item>
-    <item
-        jar="C:\Users\Sarthak\Desktop\EGM-FrontEnd\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-vision\8.4.0\jars\classes.jar"
-        jumboMode="false"
-        revision="21.1.2"
-        sha1="dfecc4d835cdabcdecf7e95f0d20a3ef1e9d8ef4">
-        <dex dex="C:\Users\Sarthak\Desktop\EGM-FrontEnd\app\build\intermediates\pre-dexed\debug\classes-8886704373086f9903122dd3500a50d0f5d3bc57.jar" />
-    </item>
-    <item
-        jar="C:\Users\Sarthak\Desktop\EGM-FrontEnd\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-games\8.4.0\jars\classes.jar"
-        jumboMode="false"
-        revision="21.1.2"
-        sha1="3a364cc6b698d1b3b2d284f64618daaa7fe77ddf">
-        <dex dex="C:\Users\Sarthak\Desktop\EGM-FrontEnd\app\build\intermediates\pre-dexed\debug\classes-22da4f72baf9e3b9178a364651cef8bdd1b0f708.jar" />
-    </item>
-    <item
-        jar="C:\Users\Sarthak\Desktop\EGM-FrontEnd\app\build\intermediates\exploded-aar\com.android.support\design\23.2.1\jars\classes.jar"
-        jumboMode="false"
-        revision="21.1.2"
-        sha1="72961d8b453b46e277702f18de9d210bc019e36e">
-        <dex dex="C:\Users\Sarthak\Desktop\EGM-FrontEnd\app\build\intermediates\pre-dexed\debug\classes-9ab2f5eb03ace24e76010c9812fdf341db4803b6.jar" />
-    </item>
-    <item
-        jar="C:\Users\Sarthak\Desktop\EGM-FrontEnd\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-appinvite\8.4.0\jars\classes.jar"
-        jumboMode="false"
-        revision="21.1.2"
-        sha1="9fe026fb4c7fce21bc5142f6e1bdf844f28061ac">
-        <dex dex="C:\Users\Sarthak\Desktop\EGM-FrontEnd\app\build\intermediates\pre-dexed\debug\classes-eec1773b58afb6bd7db9dd59457a73dd299208db.jar" />
-    </item>
-    <item
-        jar="C:\Users\Sarthak\AppData\Local\Android\sdk\extras\android\m2repository\com\android\support\support-annotations\23.2.1\support-annotations-23.2.1.jar"
-        jumboMode="false"
-        revision="21.1.2"
-        sha1="ccb693bc0774fcb637246f7360de25b4af7df318">
-        <dex dex="C:\Users\Sarthak\Desktop\EGM-FrontEnd\app\build\intermediates\pre-dexed\debug\support-annotations-23.2.1-e277e1b39ce229ed08fcd29bdb4a8dd1bc4435f2.jar" />
-    </item>
-    <item
-        jar="C:\Users\Sarthak\Desktop\EGM-FrontEnd\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-ads\8.4.0\jars\classes.jar"
-        jumboMode="false"
-        revision="21.1.2"
-        sha1="b5e7892fb0708e792e0e933c4c0a0ca0ac7831fb">
-        <dex dex="C:\Users\Sarthak\Desktop\EGM-FrontEnd\app\build\intermediates\pre-dexed\debug\classes-c8cd6cdf0ff55162f9f749ca19889622cd2f9c6c.jar" />
-    </item>
-    <item
-        jar="C:\Users\Sarthak\Desktop\EGM-FrontEnd\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-appindexing\8.4.0\jars\classes.jar"
-        jumboMode="false"
-        revision="21.1.2"
-        sha1="65d086ee9daaf87b5af62ad24471edafa433354c">
-        <dex dex="C:\Users\Sarthak\Desktop\EGM-FrontEnd\app\build\intermediates\pre-dexed\debug\classes-7921cb9d9fa9b8567a9e0023cf897195f01adfe9.jar" />
-    </item>
-    <item
-        jar="C:\Users\Sarthak\Desktop\EGM-FrontEnd\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-panorama\8.4.0\jars\classes.jar"
-        jumboMode="false"
-        revision="21.1.2"
-        sha1="08d34b2d135c1cc96ab506fd8bf6916d1e2f391a">
-        <dex dex="C:\Users\Sarthak\Desktop\EGM-FrontEnd\app\build\intermediates\pre-dexed\debug\classes-678987d5a22c03cf125a02625a212b98186983d2.jar" />
-    </item>
-    <item
-        jar="C:\Users\Sarthak\Desktop\EGM-FrontEnd\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-wearable\8.4.0\jars\classes.jar"
-        jumboMode="false"
-        revision="21.1.2"
-        sha1="e167a34eaca0b31704212f43f9576ea84e05046f">
-        <dex dex="C:\Users\Sarthak\Desktop\EGM-FrontEnd\app\build\intermediates\pre-dexed\debug\classes-d3f9536c6b7d195019011efafdcc97d0cb1dd3e1.jar" />
-    </item>
-    <item
-        jar="C:\Users\Sarthak\Desktop\EGM-FrontEnd\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-gcm\8.4.0\jars\classes.jar"
-        jumboMode="false"
-        revision="21.1.2"
-        sha1="2d7fe76982677315c4dc4edfb459c8ca718a9d4c">
-        <dex dex="C:\Users\Sarthak\Desktop\EGM-FrontEnd\app\build\intermediates\pre-dexed\debug\classes-83a6f2dbd19705b603e8438ac544c3a541fc229c.jar" />
-    </item>
-    <item
-        jar="C:\Users\Sarthak\Desktop\EGM-FrontEnd\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-wallet\8.4.0\jars\classes.jar"
-        jumboMode="false"
-        revision="21.1.2"
-        sha1="f2df436a8f02ce7e4d7d209671fc45f97c470f0e">
-        <dex dex="C:\Users\Sarthak\Desktop\EGM-FrontEnd\app\build\intermediates\pre-dexed\debug\classes-28faf99707312302d3144585ed725f641504b082.jar" />
-    </item>
-    <item
-        jar="C:\Users\Sarthak\Desktop\EGM-FrontEnd\app\build\intermediates\exploded-aar\com.android.support\support-vector-drawable\23.2.1\jars\classes.jar"
-        jumboMode="false"
-        revision="21.1.2"
-        sha1="673d77a5bbddd766037f088e775df525c46407f0">
-        <dex dex="C:\Users\Sarthak\Desktop\EGM-FrontEnd\app\build\intermediates\pre-dexed\debug\classes-256de7c6817e56b512a702e582e398474874813b.jar" />
-    </item>
-    <item
-        jar="C:\Users\Sarthak\Desktop\EGM-FrontEnd\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-location\8.4.0\jars\classes.jar"
-        jumboMode="false"
-        revision="21.1.2"
-        sha1="a8412b654dab86d57bf90683367488211c8a81f1">
-        <dex dex="C:\Users\Sarthak\Desktop\EGM-FrontEnd\app\build\intermediates\pre-dexed\debug\classes-b88180989a5f2710c20a79fea4adc7122f043221.jar" />
-    </item>
-    <item
-        jar="C:\Users\Sarthak\Desktop\EGM-FrontEnd\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-maps\8.4.0\jars\classes.jar"
-        jumboMode="false"
-        revision="21.1.2"
-        sha1="04de44f90606c77f3b28cf44861f306290505aac">
-        <dex dex="C:\Users\Sarthak\Desktop\EGM-FrontEnd\app\build\intermediates\pre-dexed\debug\classes-607322cc0f17399952056a56284f4044ca5ae659.jar" />
-    </item>
-    <item
-        jar="C:\Users\Sarthak\Desktop\EGM-FrontEnd\app\build\intermediates\exploded-aar\com.android.support\mediarouter-v7\23.0.0\jars\classes.jar"
-        jumboMode="false"
-        revision="21.1.2"
-        sha1="d358b3dd49a7c67844622dcbc9cf4339e13952ce">
-        <dex dex="C:\Users\Sarthak\Desktop\EGM-FrontEnd\app\build\intermediates\pre-dexed\debug\classes-e589070acb4c3f2ea7c1b51e9361bbcf5db8ff6c.jar" />
-    </item>
-    <item
-        jar="C:\Users\Sarthak\Desktop\EGM-FrontEnd\app\build\intermediates\exploded-aar\com.android.support\support-v4\23.2.1\jars\classes.jar"
-        jumboMode="false"
-        revision="21.1.2"
-        sha1="3be474b1b21b31cf2fa93fe6bd641ae108d96452">
-        <dex dex="C:\Users\Sarthak\Desktop\EGM-FrontEnd\app\build\intermediates\pre-dexed\debug\classes-67623fe564025e549a0c2ef7e4b4c9ac7e94245c.jar" />
-    </item>
-    <item
-        jar="C:\Users\Sarthak\Desktop\EGM-FrontEnd\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-plus\8.4.0\jars\classes.jar"
-        jumboMode="false"
-        revision="21.1.2"
-        sha1="1a78298e7724d5440d210bcb946b3493250d354d">
-        <dex dex="C:\Users\Sarthak\Desktop\EGM-FrontEnd\app\build\intermediates\pre-dexed\debug\classes-8296dbab5c4f24b2d5650cb29484badd0d286505.jar" />
-    </item>
-    <item
-        jar="C:\Users\Sarthak\Desktop\EGM-FrontEnd\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-basement\8.4.0\jars\classes.jar"
-        jumboMode="false"
-        revision="21.1.2"
-        sha1="8e673cdfadd8f2d98fdb2fda2285c30f6e449782">
-        <dex dex="C:\Users\Sarthak\Desktop\EGM-FrontEnd\app\build\intermediates\pre-dexed\debug\classes-57848eb9a641bf18d179d96caa5061529bfe308a.jar" />
-    </item>
-    <item
-        jar="C:\Users\Sarthak\Desktop\EGM-FrontEnd\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-nearby\8.4.0\jars\classes.jar"
-        jumboMode="false"
-        revision="21.1.2"
-        sha1="9cad249cf62751a323d9af568caf12284b7d6062">
-        <dex dex="C:\Users\Sarthak\Desktop\EGM-FrontEnd\app\build\intermediates\pre-dexed\debug\classes-c3ac563fecceed74caa21d39e70bc97674088e1d.jar" />
-    </item>
-    <item
-        jar="C:\Users\Sarthak\Desktop\EGM-FrontEnd\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-identity\8.4.0\jars\classes.jar"
-        jumboMode="false"
-        revision="21.1.2"
-        sha1="b82b8e847173c28efffcd291b2a0b1ae9ad17fa4">
-        <dex dex="C:\Users\Sarthak\Desktop\EGM-FrontEnd\app\build\intermediates\pre-dexed\debug\classes-55f86f20ef0a5a656906e8c82e63ef9e876f621f.jar" />
-    </item>
-    <item
-        jar="C:\Users\Sarthak\Desktop\EGM-FrontEnd\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-auth\8.4.0\jars\classes.jar"
+        jar="/home/ksameersrk/Documents/se_project/EGM-FrontEnd/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-auth/8.4.0/jars/classes.jar"
         jumboMode="false"
         revision="21.1.2"
         sha1="966e5771a5a2ebfb31bf00d7cd6cd2546d245517">
-        <dex dex="C:\Users\Sarthak\Desktop\EGM-FrontEnd\app\build\intermediates\pre-dexed\debug\classes-e3cc75a0e6dac79c9b838d2f288bf0033e06e375.jar" />
+        <dex dex="/home/ksameersrk/Documents/se_project/EGM-FrontEnd/app/build/intermediates/pre-dexed/debug/classes-b5d03d5c6a55aea9bfe1f79c0287b53aa42d16a7.jar" />
     </item>
     <item
-        jar="C:\Users\Sarthak\Desktop\EGM-FrontEnd\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-fitness\8.4.0\jars\classes.jar"
+        jar="/home/ksameersrk/Documents/se_project/EGM-FrontEnd/app/build/intermediates/exploded-aar/com.android.support/mediarouter-v7/23.0.0/jars/classes.jar"
         jumboMode="false"
         revision="21.1.2"
-        sha1="c54246475c1bb64ac6857d1320364bfbfeda2c46">
-        <dex dex="C:\Users\Sarthak\Desktop\EGM-FrontEnd\app\build\intermediates\pre-dexed\debug\classes-7a6e3e68f13811d44f69230f46e6e34d4343bd92.jar" />
+        sha1="d358b3dd49a7c67844622dcbc9cf4339e13952ce">
+        <dex dex="/home/ksameersrk/Documents/se_project/EGM-FrontEnd/app/build/intermediates/pre-dexed/debug/classes-ef67dff142ef22914c2b27f734d8e1f3dc1393db.jar" />
     </item>
     <item
-        jar="C:\Users\Sarthak\Desktop\EGM-FrontEnd\app\build\intermediates\exploded-aar\com.android.support\recyclerview-v7\23.2.1\jars\classes.jar"
-        jumboMode="false"
-        revision="21.1.2"
-        sha1="e3885783ff8926ed9e2fdcd16816c2e1e73e7aee">
-        <dex dex="C:\Users\Sarthak\Desktop\EGM-FrontEnd\app\build\intermediates\pre-dexed\debug\classes-0142a1744c03141f72943e2299a3fb229af9c678.jar" />
-    </item>
-    <item
-        jar="C:\Users\Sarthak\Desktop\EGM-FrontEnd\app\build\intermediates\exploded-aar\com.android.support\animated-vector-drawable\23.2.1\jars\classes.jar"
-        jumboMode="false"
-        revision="21.1.2"
-        sha1="3469cb457f10f74c28cbc05f069b6c894f6cbdd0">
-        <dex dex="C:\Users\Sarthak\Desktop\EGM-FrontEnd\app\build\intermediates\pre-dexed\debug\classes-c75ae2cd1ad502b870d3faa8aba93ae50f6d62b7.jar" />
-    </item>
-    <item
-        jar="C:\Users\Sarthak\Desktop\EGM-FrontEnd\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-safetynet\8.4.0\jars\classes.jar"
-        jumboMode="false"
-        revision="21.1.2"
-        sha1="0194a7409c40de94fb539d4ad9928ec5d47afeb7">
-        <dex dex="C:\Users\Sarthak\Desktop\EGM-FrontEnd\app\build\intermediates\pre-dexed\debug\classes-8fac5891772cee97c7573fc01a935bc80c58170a.jar" />
-    </item>
-    <item
-        jar="C:\Users\Sarthak\Desktop\EGM-FrontEnd\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-base\8.4.0\jars\classes.jar"
-        jumboMode="false"
-        revision="21.1.2"
-        sha1="fef2b3e4b6b1b0e5fe7b69fa137a5fa55a3182ab">
-        <dex dex="C:\Users\Sarthak\Desktop\EGM-FrontEnd\app\build\intermediates\pre-dexed\debug\classes-4316cde86c47eb301362f78b9679567c371cd1a2.jar" />
-    </item>
-    <item
-        jar="C:\Users\Sarthak\Desktop\EGM-FrontEnd\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-cast\8.4.0\jars\classes.jar"
-        jumboMode="false"
-        revision="21.1.2"
-        sha1="551e78f21acf69ebfb489c0e79647824c838013e">
-        <dex dex="C:\Users\Sarthak\Desktop\EGM-FrontEnd\app\build\intermediates\pre-dexed\debug\classes-e79065f7a87e0690a40fe3b392e8961775c39204.jar" />
-    </item>
-    <item
-        jar="C:\Users\Sarthak\Desktop\EGM-FrontEnd\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\23.2.1\jars\classes.jar"
+        jar="/home/ksameersrk/Documents/se_project/EGM-FrontEnd/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.2.1/jars/classes.jar"
         jumboMode="false"
         revision="21.1.2"
         sha1="e4d0cbb0b999604b349062f0214a0a228a7fd151">
-        <dex dex="C:\Users\Sarthak\Desktop\EGM-FrontEnd\app\build\intermediates\pre-dexed\debug\classes-83054b4a06d3abdbe8485eba635d623be50299dd.jar" />
+        <dex dex="/home/ksameersrk/Documents/se_project/EGM-FrontEnd/app/build/intermediates/pre-dexed/debug/classes-6f9bd5497e8934a6e62aeb74d2c5a5b735ea11ea.jar" />
     </item>
     <item
-        jar="C:\Users\Sarthak\Desktop\EGM-FrontEnd\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-analytics\8.4.0\jars\classes.jar"
+        jar="/home/ksameersrk/Documents/se_project/EGM-FrontEnd/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-analytics/8.4.0/jars/classes.jar"
         jumboMode="false"
         revision="21.1.2"
         sha1="1c9f35e952b212c843f7bd2c7eec8e82ad95602e">
-        <dex dex="C:\Users\Sarthak\Desktop\EGM-FrontEnd\app\build\intermediates\pre-dexed\debug\classes-f3c17b3f14ac9590ab8c138ae3d7de02c8086ba3.jar" />
+        <dex dex="/home/ksameersrk/Documents/se_project/EGM-FrontEnd/app/build/intermediates/pre-dexed/debug/classes-1af93f93038ae89bf281439d228bb44787d7e566.jar" />
     </item>
     <item
-        jar="C:\Users\Sarthak\Desktop\EGM-FrontEnd\app\build\intermediates\exploded-aar\com.android.support\support-v4\23.2.1\jars\libs\internal_impl-23.2.1.jar"
+        jar="/home/ksameersrk/Documents/se_project/EGM-FrontEnd/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-appinvite/8.4.0/jars/classes.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="9fe026fb4c7fce21bc5142f6e1bdf844f28061ac">
+        <dex dex="/home/ksameersrk/Documents/se_project/EGM-FrontEnd/app/build/intermediates/pre-dexed/debug/classes-392f566ada398d4b117724e5b09c8ed4305e9ce2.jar" />
+    </item>
+    <item
+        jar="/home/ksameersrk/Documents/se_project/EGM-FrontEnd/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-games/8.4.0/jars/classes.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="3a364cc6b698d1b3b2d284f64618daaa7fe77ddf">
+        <dex dex="/home/ksameersrk/Documents/se_project/EGM-FrontEnd/app/build/intermediates/pre-dexed/debug/classes-9103d6f29daebf1e62d5917345eb847a16d6dc98.jar" />
+    </item>
+    <item
+        jar="/home/ksameersrk/Documents/se_project/EGM-FrontEnd/app/build/intermediates/exploded-aar/com.android.support/support-v4/23.2.1/jars/libs/internal_impl-23.2.1.jar"
         jumboMode="false"
         revision="21.1.2"
         sha1="607a3d0b8013b4ccbfeb0b7cb293351994e021fb">
-        <dex dex="C:\Users\Sarthak\Desktop\EGM-FrontEnd\app\build\intermediates\pre-dexed\debug\internal_impl-23.2.1-01726257e47359408a542545796508db14892425.jar" />
+        <dex dex="/home/ksameersrk/Documents/se_project/EGM-FrontEnd/app/build/intermediates/pre-dexed/debug/internal_impl-23.2.1-cfc78ba4f966800c03faca1f1bb962935bfa4a00.jar" />
+    </item>
+    <item
+        jar="/home/ksameersrk/Documents/se_project/EGM-FrontEnd/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-gcm/8.4.0/jars/classes.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="2d7fe76982677315c4dc4edfb459c8ca718a9d4c">
+        <dex dex="/home/ksameersrk/Documents/se_project/EGM-FrontEnd/app/build/intermediates/pre-dexed/debug/classes-8a120e314aed0f25a8f954f4a9750b86582565ab.jar" />
+    </item>
+    <item
+        jar="/home/ksameersrk/Documents/se_project/EGM-FrontEnd/app/build/intermediates/exploded-aar/com.android.support/support-v4/23.2.1/jars/classes.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="3be474b1b21b31cf2fa93fe6bd641ae108d96452">
+        <dex dex="/home/ksameersrk/Documents/se_project/EGM-FrontEnd/app/build/intermediates/pre-dexed/debug/classes-63296327ebafab5f919f4ecac5959a2b46b1a53b.jar" />
+    </item>
+    <item
+        jar="/home/ksameersrk/Documents/se_project/EGM-FrontEnd/app/build/intermediates/exploded-aar/com.android.support/design/23.2.1/jars/classes.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="72961d8b453b46e277702f18de9d210bc019e36e">
+        <dex dex="/home/ksameersrk/Documents/se_project/EGM-FrontEnd/app/build/intermediates/pre-dexed/debug/classes-7f167acd0e3218e1833314086707281e4d51c012.jar" />
+    </item>
+    <item
+        jar="/home/ksameersrk/Documents/se_project/EGM-FrontEnd/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-vision/8.4.0/jars/classes.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="dfecc4d835cdabcdecf7e95f0d20a3ef1e9d8ef4">
+        <dex dex="/home/ksameersrk/Documents/se_project/EGM-FrontEnd/app/build/intermediates/pre-dexed/debug/classes-6b4e7a4cd74fa26295aab63e625db965719b5bdb.jar" />
+    </item>
+    <item
+        jar="/home/ksameersrk/Documents/se_project/EGM-FrontEnd/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-wearable/8.4.0/jars/classes.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="e167a34eaca0b31704212f43f9576ea84e05046f">
+        <dex dex="/home/ksameersrk/Documents/se_project/EGM-FrontEnd/app/build/intermediates/pre-dexed/debug/classes-3d537293abeba65015d23c1246c18c325cc0d476.jar" />
+    </item>
+    <item
+        jar="/home/ksameersrk/Documents/se_project/EGM-FrontEnd/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-maps/8.4.0/jars/classes.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="04de44f90606c77f3b28cf44861f306290505aac">
+        <dex dex="/home/ksameersrk/Documents/se_project/EGM-FrontEnd/app/build/intermediates/pre-dexed/debug/classes-eb50c1fe7fbdca48e99a1d798d3ca8c153a46efa.jar" />
+    </item>
+    <item
+        jar="/home/ksameersrk/Documents/se_project/EGM-FrontEnd/app/build/intermediates/exploded-aar/com.android.support/recyclerview-v7/23.2.1/jars/classes.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="e3885783ff8926ed9e2fdcd16816c2e1e73e7aee">
+        <dex dex="/home/ksameersrk/Documents/se_project/EGM-FrontEnd/app/build/intermediates/pre-dexed/debug/classes-065d97d80f3c659b6f320f42784611e642f87207.jar" />
+    </item>
+    <item
+        jar="/home/ksameersrk/Documents/se_project/EGM-FrontEnd/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-appindexing/8.4.0/jars/classes.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="65d086ee9daaf87b5af62ad24471edafa433354c">
+        <dex dex="/home/ksameersrk/Documents/se_project/EGM-FrontEnd/app/build/intermediates/pre-dexed/debug/classes-7af9b3152a4cf042425148f2d940a97a3d069753.jar" />
+    </item>
+    <item
+        jar="/home/ksameersrk/Documents/se_project/EGM-FrontEnd/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-panorama/8.4.0/jars/classes.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="08d34b2d135c1cc96ab506fd8bf6916d1e2f391a">
+        <dex dex="/home/ksameersrk/Documents/se_project/EGM-FrontEnd/app/build/intermediates/pre-dexed/debug/classes-d644bb1a8b36fe64d405d34ddad457374bb6c9c7.jar" />
+    </item>
+    <item
+        jar="/home/ksameersrk/Documents/se_project/EGM-FrontEnd/app/build/intermediates/exploded-aar/com.android.support/mediarouter-v7/23.0.0/jars/libs/internal_impl-23.0.0.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="03d38bb042efe3e5ce27ba66b729a9523c36d8fe">
+        <dex dex="/home/ksameersrk/Documents/se_project/EGM-FrontEnd/app/build/intermediates/pre-dexed/debug/internal_impl-23.0.0-295979bfecfe61b17b3bf446bb49da887f0758f0.jar" />
+    </item>
+    <item
+        jar="/home/ksameersrk/Documents/se_project/EGM-FrontEnd/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-measurement/8.4.0/jars/classes.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="613298b7aa012f121ce542881c0a599ebd8078f2">
+        <dex dex="/home/ksameersrk/Documents/se_project/EGM-FrontEnd/app/build/intermediates/pre-dexed/debug/classes-87c5fc6ba52392c96ff0bf925d86d225c49f01ce.jar" />
+    </item>
+    <item
+        jar="/home/ksameersrk/Documents/se_project/EGM-FrontEnd/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-basement/8.4.0/jars/classes.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="8e673cdfadd8f2d98fdb2fda2285c30f6e449782">
+        <dex dex="/home/ksameersrk/Documents/se_project/EGM-FrontEnd/app/build/intermediates/pre-dexed/debug/classes-4e57448d11fd8178ac1f68a12631c83faaf24c68.jar" />
+    </item>
+    <item
+        jar="/home/ksameersrk/Documents/se_project/EGM-FrontEnd/app/build/intermediates/exploded-aar/com.android.support/support-vector-drawable/23.2.1/jars/classes.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="673d77a5bbddd766037f088e775df525c46407f0">
+        <dex dex="/home/ksameersrk/Documents/se_project/EGM-FrontEnd/app/build/intermediates/pre-dexed/debug/classes-51eac7678e2dc1690c6e50c31c65459084bf4134.jar" />
+    </item>
+    <item
+        jar="/home/ksameersrk/Documents/se_project/EGM-FrontEnd/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-fitness/8.4.0/jars/classes.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="c54246475c1bb64ac6857d1320364bfbfeda2c46">
+        <dex dex="/home/ksameersrk/Documents/se_project/EGM-FrontEnd/app/build/intermediates/pre-dexed/debug/classes-64bec612cf7b23eaec0fb1efbf459d8cc2c7e016.jar" />
+    </item>
+    <item
+        jar="/home/ksameersrk/Documents/se_project/EGM-FrontEnd/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-location/8.4.0/jars/classes.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="a8412b654dab86d57bf90683367488211c8a81f1">
+        <dex dex="/home/ksameersrk/Documents/se_project/EGM-FrontEnd/app/build/intermediates/pre-dexed/debug/classes-30fc00c88519889834911882c171de9bdcf72e5d.jar" />
+    </item>
+    <item
+        jar="/home/ksameersrk/Documents/se_project/EGM-FrontEnd/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-plus/8.4.0/jars/classes.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="1a78298e7724d5440d210bcb946b3493250d354d">
+        <dex dex="/home/ksameersrk/Documents/se_project/EGM-FrontEnd/app/build/intermediates/pre-dexed/debug/classes-177a97d8af3fa451038f5c3be4f223445bac9cba.jar" />
+    </item>
+    <item
+        jar="/home/ksameersrk/Documents/se_project/EGM-FrontEnd/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-cast/8.4.0/jars/classes.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="551e78f21acf69ebfb489c0e79647824c838013e">
+        <dex dex="/home/ksameersrk/Documents/se_project/EGM-FrontEnd/app/build/intermediates/pre-dexed/debug/classes-41816a3b63074b685f7e207ec293d2efbce9080a.jar" />
+    </item>
+    <item
+        jar="/home/ksameersrk/Software/Android/android-sdk/extras/android/m2repository/com/android/support/support-annotations/23.2.1/support-annotations-23.2.1.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="ccb693bc0774fcb637246f7360de25b4af7df318">
+        <dex dex="/home/ksameersrk/Documents/se_project/EGM-FrontEnd/app/build/intermediates/pre-dexed/debug/support-annotations-23.2.1-0051678dd80ee90cee3622548c382f53e3ef9551.jar" />
+    </item>
+    <item
+        jar="/home/ksameersrk/Documents/se_project/EGM-FrontEnd/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-ads/8.4.0/jars/classes.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="b5e7892fb0708e792e0e933c4c0a0ca0ac7831fb">
+        <dex dex="/home/ksameersrk/Documents/se_project/EGM-FrontEnd/app/build/intermediates/pre-dexed/debug/classes-ddf3f239b0598d642b79f2e13d9d2f54386b21ce.jar" />
+    </item>
+    <item
+        jar="/home/ksameersrk/Documents/se_project/EGM-FrontEnd/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-base/8.4.0/jars/classes.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="fef2b3e4b6b1b0e5fe7b69fa137a5fa55a3182ab">
+        <dex dex="/home/ksameersrk/Documents/se_project/EGM-FrontEnd/app/build/intermediates/pre-dexed/debug/classes-a64ba606b75ec1e2d063604ca7b95098ccc00466.jar" />
+    </item>
+    <item
+        jar="/home/ksameersrk/Documents/se_project/EGM-FrontEnd/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-nearby/8.4.0/jars/classes.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="9cad249cf62751a323d9af568caf12284b7d6062">
+        <dex dex="/home/ksameersrk/Documents/se_project/EGM-FrontEnd/app/build/intermediates/pre-dexed/debug/classes-885b7a9c276d9d9616b4ca10060dbf09a0e23ad6.jar" />
+    </item>
+    <item
+        jar="/home/ksameersrk/Documents/se_project/EGM-FrontEnd/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-wallet/8.4.0/jars/classes.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="f2df436a8f02ce7e4d7d209671fc45f97c470f0e">
+        <dex dex="/home/ksameersrk/Documents/se_project/EGM-FrontEnd/app/build/intermediates/pre-dexed/debug/classes-665a3421afbb1a7b293a63e1f8aa0efa509735f7.jar" />
+    </item>
+    <item
+        jar="/home/ksameersrk/Documents/se_project/EGM-FrontEnd/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-identity/8.4.0/jars/classes.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="b82b8e847173c28efffcd291b2a0b1ae9ad17fa4">
+        <dex dex="/home/ksameersrk/Documents/se_project/EGM-FrontEnd/app/build/intermediates/pre-dexed/debug/classes-792ae85d7a02056c669dee9cacd4bb10208128cf.jar" />
+    </item>
+    <item
+        jar="/home/ksameersrk/Documents/se_project/EGM-FrontEnd/app/build/intermediates/exploded-aar/com.android.support/animated-vector-drawable/23.2.1/jars/classes.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="3469cb457f10f74c28cbc05f069b6c894f6cbdd0">
+        <dex dex="/home/ksameersrk/Documents/se_project/EGM-FrontEnd/app/build/intermediates/pre-dexed/debug/classes-503b17e690a67f5000435dea330168f06a673f37.jar" />
+    </item>
+    <item
+        jar="/home/ksameersrk/Documents/se_project/EGM-FrontEnd/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-safetynet/8.4.0/jars/classes.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="0194a7409c40de94fb539d4ad9928ec5d47afeb7">
+        <dex dex="/home/ksameersrk/Documents/se_project/EGM-FrontEnd/app/build/intermediates/pre-dexed/debug/classes-0c07a820b6062670ae5f7bce972b46a46ae82f12.jar" />
     </item>
 
 </items>
