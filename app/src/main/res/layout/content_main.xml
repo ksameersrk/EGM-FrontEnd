@@ -12,12 +12,22 @@
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:showIn="@layout/activity_main" tools:context=".MainActivity">
 
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Hey anonymous!"
+        android:id="@+id/title_text"
+        android:textColor="#ffffff"
+        android:layout_centerHorizontal="true"
+        android:textSize="30sp"
+        android:textAlignment="center" />
     <Button
         android:layout_width="248dp"
         android:layout_height="60dp"
         android:text="FREESTYLE"
         android:id="@+id/button1"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="50dp"
+        android:layout_below="@+id/title_text"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         android:background="#9fba78"
@@ -35,7 +45,7 @@
         android:layout_below="@+id/button1"
         android:layout_alignRight="@+id/button1"
         android:layout_alignEnd="@+id/button1"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="20dp"
         android:background="#9fba78"
         android:textStyle="bold"
         android:textColor="#ffffff"
@@ -50,11 +60,12 @@
         android:layout_below="@+id/button2"
         android:layout_alignLeft="@+id/button2"
         android:layout_alignStart="@+id/button2"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="20dp"
         android:background="#9fba78"
         android:textStyle="bold"
         android:textColor="#ffffff"
-        android:textSize="22sp"/>
+        android:textSize="22sp"
+        android:onClick="callGroupTrip"/>
 
     <Button
         android:layout_width="248dp"
@@ -63,11 +74,12 @@
         android:id="@+id/button4"
         android:layout_below="@+id/button3"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="20dp"
         android:background="#9fba78"
         android:textStyle="bold"
         android:textColor="#ffffff"
-        android:textSize="22sp"/>
+        android:textSize="22sp"
+        android:onClick="callTravelDiary"/>
 
     <Button
         android:layout_width="248dp"
@@ -76,7 +88,7 @@
         android:id="@+id/button5"
         android:layout_below="@+id/button4"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="20dp"
         android:background="#9fba78"
         android:textStyle="bold"
         android:textColor="#ffffff"
