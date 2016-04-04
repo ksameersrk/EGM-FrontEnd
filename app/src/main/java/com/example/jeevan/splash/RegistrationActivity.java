@@ -36,7 +36,7 @@ import java.util.List;
 import static android.Manifest.permission.READ_CONTACTS;
 
 /**
- * A login screen that offers login via email/password.
+ * A login screen that offers login via phone_number/password.
  */
 public class RegistrationActivity extends AppCompatActivity implements LoaderCallbacks<Cursor> {
 
@@ -45,13 +45,6 @@ public class RegistrationActivity extends AppCompatActivity implements LoaderCal
      */
     private static final int REQUEST_READ_CONTACTS = 0;
 
-    /**
-     * A dummy authentication store containing known user names and passwords.
-     * TODO: remove after connecting to a real authentication system.
-     */
-    private static final String[] DUMMY_CREDENTIALS = new String[]{
-            "foo@example.com:hello", "bar@example.com:world"
-    };
     /**
      * Keep track of the login task to ensure we can cancel it if requested.
      */
@@ -89,7 +82,7 @@ public class RegistrationActivity extends AppCompatActivity implements LoaderCal
             }
         });
 
-        Button mSignUpButton = (Button) findViewById(R.id.email_sign_in_button);
+        Button mSignUpButton = (Button) findViewById(R.id.registration_phone_number_sign_in_button);
         mSignUpButton.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -147,7 +140,7 @@ public class RegistrationActivity extends AppCompatActivity implements LoaderCal
 
     /**
      * Attempts to sign in or register the account specified by the login form.
-     * If there are form errors (invalid email, missing fields, etc.), the
+     * If there are form errors (invalid phone_number, missing fields, etc.), the
      * errors are presented and no actual login attempt is made.
      */
     private void attemptLogin() {
@@ -284,26 +277,26 @@ public class RegistrationActivity extends AppCompatActivity implements LoaderCal
                 Uri.withAppendedPath(ContactsContract.Profile.CONTENT_URI,
                         ContactsContract.Contacts.Data.CONTENT_DIRECTORY), ProfileQuery.PROJECTION,
 
-                // Select only email addresses.
+                // Select only phone_number addresses.
                 ContactsContract.Contacts.Data.MIMETYPE +
-                        " = ?", new String[]{ContactsContract.CommonDataKinds.Email
+                        " = ?", new String[]{ContactsContract.CommonDataKinds.Phone
                 .CONTENT_ITEM_TYPE},
 
-                // Show primary email addresses first. Note that there won't be
-                // a primary email address if the user hasn't specified one.
+                // Show primary phone_number addresses first. Note that there won't be
+                // a primary phone_number if the user hasn't specified one.
                 ContactsContract.Contacts.Data.IS_PRIMARY + " DESC");
     }
 
     @Override
     public void onLoadFinished(Loader<Cursor> cursorLoader, Cursor cursor) {
-        List<String> emails = new ArrayList<>();
+        List<String> phoneNumbers = new ArrayList<>();
         cursor.moveToFirst();
         while (!cursor.isAfterLast()) {
-            emails.add(cursor.getString(ProfileQuery.ADDRESS));
+            phoneNumbers.add(cursor.getString(ProfileQuery.ADDRESS));
             cursor.moveToNext();
         }
 
-        addEmailsToAutoComplete(emails);
+        addPhoneNumbersToAutoComplete(phoneNumbers);
     }
 
     @Override
@@ -311,11 +304,11 @@ public class RegistrationActivity extends AppCompatActivity implements LoaderCal
 
     }
 
-    private void addEmailsToAutoComplete(List<String> emailAddressCollection) {
+    private void addPhoneNumbersToAutoComplete(List<String> phoneNumbersCollection) {
         //Create adapter to tell the AutoCompleteTextView what to show in its dropdown list.
         ArrayAdapter<String> adapter =
                 new ArrayAdapter<>(RegistrationActivity.this,
-                        android.R.layout.simple_dropdown_item_1line, emailAddressCollection);
+                        android.R.layout.simple_dropdown_item_1line, phoneNumbersCollection);
 
         mPhoneNumberView.setAdapter(adapter);
     }
@@ -323,8 +316,8 @@ public class RegistrationActivity extends AppCompatActivity implements LoaderCal
 
     private interface ProfileQuery {
         String[] PROJECTION = {
-                ContactsContract.CommonDataKinds.Email.ADDRESS,
-                ContactsContract.CommonDataKinds.Email.IS_PRIMARY,
+                ContactsContract.CommonDataKinds.Phone.NUMBER,
+                ContactsContract.CommonDataKinds.Phone.IS_PRIMARY,
         };
 
         int ADDRESS = 0;
@@ -337,11 +330,11 @@ public class RegistrationActivity extends AppCompatActivity implements LoaderCal
      */
     public class UserLoginTask extends AsyncTask<Void, Void, Boolean> {
 
-        private final String mEmail;
+        private final String mPhoneNumber;
         private final String mPassword;
 
-        UserLoginTask(String email, String password) {
-            mEmail = email;
+        UserLoginTask(String phoneNumber, String password) {
+            mPhoneNumber = phoneNumber;
             mPassword = password;
         }
 
@@ -356,13 +349,13 @@ public class RegistrationActivity extends AppCompatActivity implements LoaderCal
                 return false;
             }
 
-            for (String credential : DUMMY_CREDENTIALS) {
+            /*for (String credential : DUMMY_CREDENTIALS) {
                 String[] pieces = credential.split(":");
-                if (pieces[0].equals(mEmail)) {
+                if (pieces[0].equals(mPhoneNumber)) {
                     // Account exists, return true if the password matches.
                     return pieces[1].equals(mPassword);
                 }
-            }
+            }*/
 
             // TODO: register the new account here.
             return true;
