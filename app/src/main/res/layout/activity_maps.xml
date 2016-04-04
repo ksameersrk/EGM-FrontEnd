@@ -57,5 +57,4 @@ android:orientation="vertical">
         tools:context="com.example.jeevan.splash.MapsActivity"
         android:name="com.google.android.gms.maps.SupportMapFragment" />
 
-
 </LinearLayout>

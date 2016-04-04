@@ -1,4 +1,37 @@
 <resources>
     <string name="app_name">EGM</string>
     <string name="action_settings">Settings</string>
+    <string name="title_activity_maps">Map</string>
+    <string name="title_activity_maps2">Map</string>
+    <string name="google_app_id">default-demo-app-53a76</string>
+    <string name="IP_ADDR">https://10.0.2.2:8000</string>
+    <string name="title_activity_login">Sign in</string>
+
+    <!-- Strings related to login -->
+    <string name="login_prompt_phone_number">Phone Number</string>
+    <string name="login_prompt_password">Password</string>
+    <string name="login_action_sign_in">Sign in</string>
+    <string name="login_action_sign_up">Not registered? Sign up</string>
+    <string name="login_action_sign_in_short">Sign in</string>
+    <string name="login_error_invalid_phone_number">This phone number is invalid</string>
+    <string name="login_error_invalid_password">This password is too short</string>
+    <string name="login_error_incorrect_password">This password is incorrect</string>
+    <string name="login_error_field_required">This field is required</string>
+    <string name="login_permission_rationale">"Contacts permissions are needed for providing email
+        completions."
+    </string>
+    <string name="title_activity_registration">Sign Up</string>
+
+    <!-- Strings related to Registration -->
+    <string name="registration_prompt_phone_number">Phone Number</string>
+    <string name="registration_prompt_password">Password</string>
+    <string name="registration_action_sign_up">Sign Up</string>
+    <string name="registration_action_sign_up_short">Sign in</string>
+    <string name="registration_error_invalid_phone_number">This phone number is invalid</string>
+    <string name="registration_error_invalid_password">This password is too short</string>
+    <string name="registration_error_incorrect_password">This password is incorrect</string>
+    <string name="registration_error_field_required">This field is required</string>
+    <string name="registration_permission_rationale">"Contacts permissions are needed for providing email
+        completions."
+    </string>
 </resources>
