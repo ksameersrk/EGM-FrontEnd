@@ -18,10 +18,10 @@
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true" />
 
-    <EditText
+    <AutoCompleteTextView
         android:layout_width="350dp"
         android:layout_height="50dp"
-        android:id="@+id/user_location"
+        android:id="@+id/auto_from"
         android:layout_marginTop="5dp"
         android:textColor="#cccc1e"
         android:backgroundTint="@color/colorAccent"
@@ -37,18 +37,20 @@
         android:textStyle="bold"
         android:textSize="22sp"
         android:id="@+id/textView2"
-        android:layout_below="@+id/user_location"
+        android:layout_below="@+id/auto_from"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
         android:layout_marginTop="30dp"
         />
 
-    <EditText
+
+    <AutoCompleteTextView
         android:layout_width="350dp"
         android:layout_height="50dp"
-        android:id="@+id/editText2"
+        android:id="@+id/auto_to"
         android:layout_marginTop="5dp"
         android:textColor="#cccc1e"
+        android:backgroundTint="@color/colorAccent"
         android:layout_below="@+id/textView2"
         android:layout_centerHorizontal="true" />
 
@@ -62,7 +64,7 @@
         android:textStyle="bold"
         android:textColor="#ffffff"
         android:textSize="22sp"
-        android:layout_below="@+id/editText2"
+        android:layout_below="@+id/auto_to"
         android:layout_toRightOf="@+id/textView2"
         android:layout_alignRight="@+id/textView"
         android:layout_alignEnd="@+id/textView"
