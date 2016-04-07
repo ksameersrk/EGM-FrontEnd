@@ -20,10 +20,13 @@ public class MainActivity extends AppCompatActivity {
     public static final String PREF_FILE = "PrefFile";
     private static final String PREF_USERNAME = "username";
     private static final String PREF_PASSWORD = "password";
+    private static final String PREF_GROUP_NAME = "GroupName";
 
     String username ;
     String password ;
+    String groupName;
     Boolean isSignedin = false;
+    Boolean isPartOfGroup = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -55,7 +58,7 @@ public class MainActivity extends AppCompatActivity {
         }
         String s =  username == null ? "Anonymous" : username;
         final TextView t1 = (TextView) findViewById(R.id.title_text);
-        t1.setText("Hey "+s+"!");
+        t1.setText("Hey " + s + "!");
     }
 
     @Override
@@ -90,12 +93,29 @@ public class MainActivity extends AppCompatActivity {
         }
         if(pref != null && username != null && password != null)
         {
-            Toast.makeText(MainActivity.this, "User signed In!", Toast.LENGTH_LONG).show();
+            //Toast.makeText(MainActivity.this, "User signed In!", Toast.LENGTH_LONG).show();
             return true;
         }
         else
         {
-            Toast.makeText(MainActivity.this, "User Not signed In!", Toast.LENGTH_LONG).show();
+            //Toast.makeText(MainActivity.this, "User Not signed In!", Toast.LENGTH_LONG).show();
+            return false;
+        }
+    }
+
+    public boolean isUserPartOfGroup()
+    {
+        SharedPreferences pref = getSharedPreferences(PREF_FILE, MODE_PRIVATE);
+        if(pref != null)
+        {
+            groupName = pref.getString(PREF_GROUP_NAME, null);
+        }
+        if(pref != null && groupName != null)
+        {
+            return true;
+        }
+        else
+        {
             return false;
         }
     }
@@ -108,15 +128,25 @@ public class MainActivity extends AppCompatActivity {
     }
     public void callGroupTrip(View v){
         Intent i = null;
-        if(!isUserSignedIn()) {
+        if(! isUserSignedIn()) {
             i = new Intent(MainActivity.this, LoginActivity.class);
-            b.putString("previousWindow", "GroupTrip");
+            b.putString("previousWindow", "MainActivity");
+            b.putString("nextWindow", isUserPartOfGroup() ? "GroupTrip" : "CreateGroup");
             i.putExtras(b);
         }
         else
         {
             // TODO: 3/4/16 : call the intent of GroupTrip class
-            i = new Intent(MainActivity.this, FreeStyle.class);
+            if(! isUserPartOfGroup())
+            {
+                i = new Intent(MainActivity.this, CreateGroup.class);
+            }
+            else
+            {
+                //TODO : uncomment GroupActivity.class and coomment CreateGroup.class
+                //i = new Intent(MainActivity.this, GroupActivity.class);
+                i = new Intent(MainActivity.this, CreateGroup.class);
+            }
         }
         startActivity(i);
     }

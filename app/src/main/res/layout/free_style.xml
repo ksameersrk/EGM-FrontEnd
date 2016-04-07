@@ -79,7 +79,7 @@
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:text=""
         android:id="@+id/textView3"
-        android:layout_below="@+id/editText2"
+
         android:layout_centerHorizontal="true" />
 <!--
     <Button

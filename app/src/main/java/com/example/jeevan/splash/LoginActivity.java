@@ -347,7 +347,29 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
                         .putString(PREF_PASSWORD, mPassword)
                         .commit();
                 //startActivity(new Intent(LoginActivity.this, MainActivity.class));
-                finish();
+                String nextWindow = getIntent().getExtras().getString("nextWindow");
+                if(nextWindow == null)
+                {
+                    finish();
+                }
+                else if(nextWindow.equals("CreateGroup"))
+                {
+                    finish();
+                    startActivity(new Intent(LoginActivity.this, CreateGroup.class));
+                }
+                else if(nextWindow.equals("GroupTrip"))
+                {
+                    finish();
+                    //TODO : change MainActivity.class to GroupTrip.class
+                    startActivity(new Intent(LoginActivity.this, MainActivity.class));
+                }
+                else
+                {
+                    //TODO: may added aditional cases
+                    finish();
+                }
+
+
             } else {
                 mPasswordView.setError(getString(R.string.login_error_incorrect_password));
                 mPasswordView.requestFocus();
