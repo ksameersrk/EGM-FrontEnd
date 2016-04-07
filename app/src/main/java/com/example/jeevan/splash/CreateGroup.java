@@ -15,6 +15,7 @@ import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
 import android.widget.EditText;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 
@@ -29,6 +30,9 @@ public class CreateGroup extends AppCompatActivity {
 
     private AutoCompleteTextView mDestination;
     private EditText mGroupName;
+
+    public static final String PREF_FILE = "PrefFile";
+    private static final String PREF_GROUP_NAME = "GroupName";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -156,6 +160,12 @@ public class CreateGroup extends AppCompatActivity {
         if(noErrors()){
             //TODO: replace MainActivity.class to GroupTrip.class
             Intent i = new Intent(CreateGroup.this, MainActivity.class);
+            getSharedPreferences(PREF_FILE, MODE_PRIVATE)
+                    .edit()
+                    .putString(PREF_GROUP_NAME, mGroupName.getText().toString())
+                    .commit();
+
+
             startActivity(i);
         }
 
