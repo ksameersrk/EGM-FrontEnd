@@ -8,10 +8,15 @@ import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.AppCompatImageButton;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.GridLayout;
+import android.widget.ImageButton;
+import android.widget.LinearLayout;
 import android.widget.SeekBar;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -34,7 +39,7 @@ import static com.example.jeevan.splash.R.layout.round_about;
 /**
  * Created by jeevan on 3/3/16.
  */
-public class RoundAbout extends Activity {
+public class RoundAbout extends AppCompatActivity {
 
     Bundle b = new Bundle();
     Button getPlaces;
@@ -46,11 +51,18 @@ public class RoundAbout extends Activity {
     String radius;
     String localhost = "http://192.168.0.106:8000/test";
     private ProgressDialog progress=null;
+    private LinearLayout mLayout;
+    private EditText mEditText;
+    private Button mButton;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         // TODO Auto-generated method stub
         super.onCreate(savedInstanceState);
         setContentView(round_about);
+        mLayout = (LinearLayout) findViewById(R.id.linearLayout);
+        mEditText = (EditText) findViewById(R.id.user_location);
+        mButton = (Button) findViewById(R.id.button);
+        mButton.setOnClickListener(onClick());
         progress = new ProgressDialog(this);
         progress.setMessage("Posting data...");
         progress.setCancelable(false);
@@ -87,6 +99,26 @@ public class RoundAbout extends Activity {
         });
 
     }
+    private View.OnClickListener onClick() {
+        return new View.OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+                mLayout.addView(createNewEditTextView());
+            }
+        };
+    }
+
+    private EditText createNewEditTextView() {
+        final GridLayout.LayoutParams lparams = new GridLayout.LayoutParams();
+        final EditText editText = new EditText(this);
+        editText.setLayoutParams(lparams);
+        editText.getLayoutParams().width=520;
+        editText.getLayoutParams().height=90;
+
+        return editText;
+    }
+
 
     class postData extends AsyncTask<String,String,String>{
 

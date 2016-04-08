@@ -1,35 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<AbsoluteLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:weightSum="1"
-    android:background="@drawable/roundaboutbackgrond">
-
-    <TextView
-        android:layout_width="300dp"
-        android:layout_height="43dp"
-        android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="Enter Location"
-        android:textStyle="bold"
-        android:textSize="22sp"
-        android:id="@+id/textView"
-        android:layout_alignParentTop="true"
-        android:layout_alignLeft="@+id/user_location"
-        android:layout_alignStart="@+id/user_location"
-        android:layout_x="39dp"
-        android:layout_y="30dp"
-        android:textAlignment="center" />
-
-    <EditText
-        android:layout_width="350dp"
-        android:layout_height="50dp"
-        android:id="@+id/user_location"
-        android:layout_marginTop="2dp"
-        android:textSize="@dimen/activity_horizontal_margin"
-        android:layout_below="@+id/textView"
-        android:layout_centerHorizontal="true"
-        android:layout_x="13dp"
-        android:layout_y="69dp" />
+    >
 
     <TextView
         android:layout_width="100dp"
@@ -39,12 +13,24 @@
         android:textStyle="bold"
         android:textSize="22sp"
         android:id="@+id/textView2"
-        android:layout_below="@+id/user_location"
+        android:layout_alignParentTop="true"
         android:layout_alignRight="@+id/radius"
         android:layout_alignEnd="@+id/radius"
         android:layout_x="144dp"
-        android:layout_y="131dp" />
-
+        android:layout_y="131dp"
+        android:textAlignment="center"
+        android:layout_gravity="center_horizontal" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:id="@+id/radius"
+        android:hint="radius"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true"
+        android:layout_x="163dp"
+        android:layout_y="174dp"
+        android:layout_gravity="center_horizontal" />
     <SeekBar
         android:layout_width="282dp"
         android:layout_height="47dp"
@@ -57,28 +43,91 @@
         android:layout_alignLeft="@+id/textView2"
         android:layout_alignStart="@+id/textView2"
         android:layout_alignRight="@+id/textView"
-        android:layout_alignEnd="@+id/textView"
         android:layout_x="39dp"
         android:layout_y="190dp" />
 
+
     <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceSmall"
-        android:id="@+id/radius"
-        android:hint="radius"
-        android:layout_centerVertical="true"
-        android:layout_centerHorizontal="true"
-        android:layout_x="163dp"
-        android:layout_y="174dp" />
+        android:layout_width="300dp"
+        android:layout_height="43dp"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="Enter Location"
+        android:textStyle="bold"
+        android:textSize="22sp"
+        android:id="@+id/textView"
+        android:layout_alignLeft="@+id/user_location"
+        android:layout_alignStart="@+id/user_location"
+        android:layout_x="39dp"
+        android:layout_y="30dp"
+        android:textAlignment="center"
+        android:layout_gravity="center_horizontal" />
+
+
+    <ScrollView
+        android:layout_width="fill_parent"
+        android:layout_height="311dp">
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="fill_parent"
+            android:layout_height="326dp"
+            android:id="@+id/linearLayout"
+            >
+            <EditText
+                android:layout_width="350dp"
+                android:layout_height="40dp"
+                android:id="@+id/user_location"
+                android:layout_marginTop="2dp"
+                android:textSize="@dimen/activity_horizontal_margin"
+                android:layout_below="@+id/textView"
+                android:layout_centerHorizontal="true"
+                android:layout_x="13dp"
+                android:layout_y="69dp" />
+
+
+            <Button
+                android:id="@+id/button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Add+"
+                android:layout_gravity="right" />
+
+            <!-- <EditText
+                 android:id="@+id/user_location"
+                 android:layout_width="300dp"
+                 android:layout_height="30dp"
+                 android:layout_weight="1"
+                 android:layout_marginTop="3dp"
+                 android:layout_below="@+id/textView"
+                 android:layout_centerHorizontal="true"
+                 android:layout_x="13dp"
+                 />
+
+             <Button
+                 android:id="@+id/button"
+                 android:layout_width="wrap_content"
+                 android:layout_height="wrap_content"
+                 android:background="@null"
+                 android:text="+"
+                 android:textStyle="bold"
+                 android:layout_gravity="right"  />-->
+
+        </LinearLayout>
+    </ScrollView>
+
+
 
     <Button
-        android:layout_width="wrap_content"
+        android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:text="Get Places"
         android:id="@+id/getPlaces"
         android:layout_x="130dp"
-        android:layout_y="275dp" />
+        android:layout_y="275dp"
+        android:background="#9fba78"
+        android:textStyle="bold"
+        android:textColor="#ffffff"
+        android:textSize="22sp"
+        />
 
 
-</AbsoluteLayout>
+</LinearLayout>

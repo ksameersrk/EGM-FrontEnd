@@ -35,4 +35,7 @@
         completions."
     </string>
     <string name="title_activity_create_group">CreateGroup</string>
+
+    <!-- Strings related to RoundAbout -->
+    <string name="round_about">RoundAbout</string>
 </resources>
