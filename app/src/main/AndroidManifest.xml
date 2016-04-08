@@ -37,7 +37,7 @@
         <activity
             android:name=".MainActivity"
             android:label="@string/app_name"
-            android:theme="@style/AppTheme.NoActionBar">
+            android:theme="@style/Theme.AppCompat">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -46,8 +46,11 @@
         </activity>
         <activity
             android:name=".RoundAbout"
-            android:label="@string/app_name"
-            android:theme="@style/AppTheme.NoActionBar">
+            android:label="@string/round_about"
+            android:theme="@style/Theme.AppCompat"
+            android:windowSoftInputMode="adjustPan"
+            android:parentActivityName=".MainActivity"
+            >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -99,15 +102,23 @@
             android:label="@string/title_activity_maps" />
         <activity
             android:name=".LoginActivity"
-            android:label="@string/title_activity_login" />
-        <activity android:name=".AlreadyLoggedInActivity" />
+            android:label="@string/title_activity_login"
+            android:parentActivityName=".MainActivity"
+            android:theme="@style/Theme.AppCompat"/>
+        <activity android:name=".AlreadyLoggedInActivity"
+            android:theme="@style/Theme.AppCompat"
+            android:parentActivityName=".MainActivity"/>
         <activity
             android:name=".RegistrationActivity"
-            android:label="@string/title_activity_registration" />
+            android:label="@string/title_activity_registration"
+            android:parentActivityName=".LoginActivity"
+            android:windowSoftInputMode="adjustPan"
+            />
         <activity
             android:name=".CreateGroup"
             android:label="@string/title_activity_create_group"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:parentActivityName=".MainActivity"
+            android:theme="@style/Theme.AppCompat"></activity>
     </application>
 
 </manifest>
