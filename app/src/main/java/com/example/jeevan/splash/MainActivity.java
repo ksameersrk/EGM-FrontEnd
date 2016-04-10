@@ -186,5 +186,10 @@ public class MainActivity extends AppCompatActivity {
         startActivity(i);
     }
 
+    public void tmpFunction(View v)
+    {
+        startActivity(new Intent(MainActivity.this, ChatActivity.class));
+    }
+
 
 }

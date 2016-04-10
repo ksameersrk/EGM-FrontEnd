@@ -38,4 +38,5 @@
 
     <!-- Strings related to RoundAbout -->
     <string name="round_about">RoundAbout</string>
+    <string name="title_activity_chat">ChatActivity</string>
 </resources>
