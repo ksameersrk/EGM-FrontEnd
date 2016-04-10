@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/EGM-FrontEnd.iml" filepath="$PROJECT_DIR$/EGM-FrontEnd.iml" />
+      <module fileurl="file://$PROJECT_DIR$/EGM-frontEnd.iml" filepath="$PROJECT_DIR$/EGM-frontEnd.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
     </modules>
   </component>
