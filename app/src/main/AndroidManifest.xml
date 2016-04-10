@@ -111,7 +111,8 @@
             android:parentActivityName=".MainActivity"
             android:theme="@style/Theme.AppCompat" />
         <activity
-            android:name=".ChatActivity"/>
+            android:name=".ChatActivity"
+            android:theme="@style/Theme.AppCompat"/>
     </application>
 
 </manifest>
