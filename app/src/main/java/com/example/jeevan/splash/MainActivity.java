@@ -130,7 +130,7 @@ public class MainActivity extends AppCompatActivity {
         else
         {
             // TODO: 3/4/16 : call the intent of TravelDiary class
-            //i = new Intent(MainActivity.this, TravelDiary.class);
+            i = new Intent(MainActivity.this, TravelDiary.class);
         }
         startActivity(i);
     }

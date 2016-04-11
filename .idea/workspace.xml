@@ -6,6 +6,7 @@
     </shared>
   </component>
   <component name="AndroidLogFilters">
+    <option name="TOOL_WINDOW_CUSTOM_FILTER" value="JSON" />
     <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="Show only selected application" />
     <option name="TOOL_WINDOW_REGEXP_FILTER" value="false" />
   </component>
@@ -37,18 +38,49 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="TravelDiary.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="TravelDiary.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/jeevan/splash/TravelDiary.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.035799522">
-              <caret line="181" column="0" selection-start-line="181" selection-start-column="0" selection-end-line="181" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.0">
+              <caret line="163" column="61" selection-start-line="163" selection-start-column="61" selection-end-line="163" selection-end-column="61" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="method#viewTablesAction#0;class#TravelDiary#0" expanded="false" />
                 <element signature="method#continueTripAction#0;class#TravelDiary#0" expanded="false" />
                 <element signature="method#constructJSON#0;class#TravelDiary#0" expanded="false" />
-                <element signature="e#22539#22555#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="MainActivity.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/jeevan/splash/MainActivity.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.7735426">
+              <caret line="133" column="8" selection-start-line="133" selection-start-column="8" selection-end-line="133" selection-end-column="8" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="RegistrationActivity.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/jeevan/splash/RegistrationActivity.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="212" column="16" selection-start-line="212" selection-start-column="16" selection-end-line="212" selection-end-column="16" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="AndroidManifest.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/AndroidManifest.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="11" column="62" selection-start-line="11" selection-start-column="54" selection-end-line="11" selection-end-column="62" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -56,7 +88,7 @@
       <file leaf-file-name="MapsActivity.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/jeevan/splash/MapsActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-5.148148">
+            <state vertical-scroll-proportion="0.0">
               <caret line="149" column="21" selection-start-line="149" selection-start-column="16" selection-end-line="149" selection-end-column="21" />
               <folding />
             </state>
@@ -70,7 +102,6 @@
               <caret line="24" column="23" selection-start-line="24" selection-start-column="23" selection-end-line="24" selection-end-column="23" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#1545#1561#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -81,7 +112,9 @@
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
               <caret line="14" column="52" selection-start-line="14" selection-start-column="27" selection-end-line="14" selection-end-column="52" />
-              <folding />
+              <folding>
+                <element signature="imports" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -111,7 +144,9 @@
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
               <caret line="86" column="17" selection-start-line="86" selection-start-column="12" selection-end-line="86" selection-end-column="17" />
-              <folding />
+              <folding>
+                <element signature="imports" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -1790,6 +1825,7 @@
         <option value="$PROJECT_DIR$/app/src/main/res/layout/cont_popup.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/jeevan/splash/TravelDiaryParser.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/jeevan/splash/TravelDiary.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/example/jeevan/splash/MainActivity.java" />
       </list>
     </option>
   </component>
@@ -1823,6 +1859,10 @@
       <sortByType />
     </navigator>
     <panes>
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
+      <pane id="ProjectPane" />
+      <pane id="Scratches" />
       <pane id="AndroidView">
         <subPane>
           <PATH>
@@ -1933,10 +1973,6 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
-      <pane id="Scope" />
-      <pane id="ProjectPane" />
-      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -1961,7 +1997,7 @@
       <recent name="com.example.jeevan.splash" />
     </key>
   </component>
-  <component name="RunManager" selected="Android Application.TravelDiary">
+  <component name="RunManager" selected="Android Application.app">
     <configuration default="false" name="TravelDiary" type="AndroidRunConfigurationType" factoryName="Android Application" temporary="true">
       <module name="app" />
       <option name="DEPLOY" value="true" />
@@ -2183,23 +2219,31 @@
     </task>
     <servers />
   </component>
+  <component name="TodoView">
+    <todo-panel id="selected-file">
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="true" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+  </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1280" height="800" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3286119" sideWeight="0.49676898" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3286119" sideWeight="0.49030694" order="13" side_tool="false" content_ui="tabs" />
       <window_info id="Build Variants" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24959612" sideWeight="0.5056657" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3286119" sideWeight="0.16235864" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3286119" sideWeight="0.17689823" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Android Monitor" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3286119" sideWeight="0.83764136" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32956383" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Android Monitor" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3286119" sideWeight="0.82310176" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3286119" sideWeight="0.49030694" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3286119" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.44192636" sideWeight="0.4806139" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3286119" sideWeight="0.49353796" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Captures" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Gradle Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="12" side_tool="true" content_ui="tabs" />
@@ -2216,6 +2260,7 @@
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32956383" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
@@ -2237,6 +2282,16 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/jeevan/splash/FreeStyle.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="86" column="17" selection-start-line="86" selection-start-column="12" selection-end-line="86" selection-end-column="17" />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/jeevan/splash/TravelDiary.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -2246,7 +2301,6 @@
             <element signature="method#viewTablesAction#0;class#TravelDiary#0" expanded="false" />
             <element signature="method#continueTripAction#0;class#TravelDiary#0" expanded="false" />
             <element signature="method#constructJSON#0;class#TravelDiary#0" expanded="false" />
-            <element signature="e#22539#22555#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -2266,7 +2320,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="66" column="42" selection-start-line="66" selection-start-column="42" selection-end-line="66" selection-end-column="42" />
-          <folding />
         </state>
       </provider>
       <provider editor-type-id="android-designer">
@@ -2277,7 +2330,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2285,7 +2337,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="75" column="70" selection-start-line="75" selection-start-column="70" selection-end-line="75" selection-end-column="70" />
-          <folding />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -2293,7 +2347,6 @@
       <provider editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
       <provider selected="true" editor-type-id="android-designer">
@@ -2304,7 +2357,6 @@
       <provider editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
       <provider selected="true" editor-type-id="android-designer">
@@ -2315,7 +2367,6 @@
       <provider editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
       <provider selected="true" editor-type-id="android-designer">
@@ -2326,7 +2377,6 @@
       <provider editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
       <provider selected="true" editor-type-id="android-designer">
@@ -2337,7 +2387,6 @@
       <provider editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
       <provider selected="true" editor-type-id="android-designer">
@@ -2359,7 +2408,6 @@
       <provider editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
       <provider selected="true" editor-type-id="android-designer">
@@ -2370,7 +2418,6 @@
       <provider editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
       <provider selected="true" editor-type-id="android-designer">
@@ -2381,7 +2428,6 @@
       <provider editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
       <provider selected="true" editor-type-id="android-designer">
@@ -2392,7 +2438,6 @@
       <provider editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
       <provider selected="true" editor-type-id="android-designer">
@@ -2403,7 +2448,6 @@
       <provider editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
       <provider selected="true" editor-type-id="android-designer">
@@ -2414,7 +2458,6 @@
       <provider editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
       <provider selected="true" editor-type-id="android-designer">
@@ -2425,7 +2468,6 @@
       <provider editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
       <provider selected="true" editor-type-id="android-designer">
@@ -2436,7 +2478,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0151802655">
           <caret line="68" column="42" selection-start-line="68" selection-start-column="42" selection-end-line="68" selection-end-column="42" />
-          <folding />
         </state>
       </provider>
       <provider editor-type-id="android-designer">
@@ -2465,7 +2506,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="14" column="13" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2473,7 +2513,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="15" column="13" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2481,7 +2520,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.13452914">
           <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2489,7 +2527,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.16816144">
           <caret line="13" column="13" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2497,7 +2534,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="36" column="13" selection-start-line="36" selection-start-column="13" selection-end-line="36" selection-end-column="13" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2505,7 +2541,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-1.0143884">
           <caret line="9" column="0" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
       <provider editor-type-id="android-designer">
@@ -2516,7 +2551,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="19" column="44" selection-start-line="19" selection-start-column="5" selection-end-line="19" selection-end-column="44" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2524,7 +2558,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="5325" column="0" selection-start-line="5325" selection-start-column="0" selection-end-line="5325" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2532,9 +2565,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="2.5932202">
           <caret line="51" column="29" selection-start-line="51" selection-start-column="29" selection-end-line="51" selection-end-column="29" />
-          <folding>
-            <element signature="e#1592#1638#0" expanded="true" />
-          </folding>
         </state>
       </provider>
       <provider editor-type-id="android-designer">
@@ -2545,7 +2575,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
       <provider editor-type-id="android-designer">
@@ -2556,7 +2585,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
       <provider editor-type-id="android-designer">
@@ -2585,29 +2613,10 @@
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/jeevan/splash/RegistrationActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-5.148148">
-          <caret line="202" column="12" selection-start-line="202" selection-start-column="12" selection-end-line="202" selection-end-column="105" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/jeevan/splash/LoginSuccessful.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/jeevan/splash/MainActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-3.940334">
-          <caret line="16" column="13" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -2615,7 +2624,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.058295965">
           <caret line="269" column="26" selection-start-line="269" selection-start-column="23" selection-end-line="269" selection-end-column="26" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2656,7 +2664,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="86" column="17" selection-start-line="86" selection-start-column="12" selection-end-line="86" selection-end-column="17" />
-          <folding />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -2680,7 +2690,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="14" column="52" selection-start-line="14" selection-start-column="27" selection-end-line="14" selection-end-column="52" />
-          <folding />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -2688,15 +2700,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.033632286">
           <caret line="17" column="13" selection-start-line="17" selection-start-column="13" selection-end-line="17" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/AndroidManifest.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="3.8340807">
-          <caret line="114" column="28" selection-start-line="114" selection-start-column="28" selection-end-line="114" selection-end-column="28" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2706,29 +2709,53 @@
           <caret line="24" column="23" selection-start-line="24" selection-start-column="23" selection-end-line="24" selection-end-column="23" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#1545#1561#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/jeevan/splash/MapsActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-5.148148">
+        <state vertical-scroll-proportion="0.0">
           <caret line="149" column="21" selection-start-line="149" selection-start-column="16" selection-end-line="149" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/jeevan/splash/RegistrationActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="212" column="16" selection-start-line="212" selection-start-column="16" selection-end-line="212" selection-end-column="16" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/AndroidManifest.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="11" column="62" selection-start-line="11" selection-start-column="54" selection-end-line="11" selection-end-column="62" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/jeevan/splash/TravelDiary.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.035799522">
-          <caret line="181" column="0" selection-start-line="181" selection-start-column="0" selection-end-line="181" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="163" column="61" selection-start-line="163" selection-start-column="61" selection-end-line="163" selection-end-column="61" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="method#viewTablesAction#0;class#TravelDiary#0" expanded="false" />
             <element signature="method#continueTripAction#0;class#TravelDiary#0" expanded="false" />
             <element signature="method#constructJSON#0;class#TravelDiary#0" expanded="false" />
-            <element signature="e#22539#22555#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/jeevan/splash/MainActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.7735426">
+          <caret line="133" column="8" selection-start-line="133" selection-start-column="8" selection-end-line="133" selection-end-column="8" />
+          <folding>
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
