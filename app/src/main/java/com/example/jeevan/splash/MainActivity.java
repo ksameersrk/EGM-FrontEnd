@@ -143,11 +143,11 @@ public class MainActivity extends AppCompatActivity {
             }
             else
             {
-                //TODO : uncomment GroupActivity.class and comment CreateGroup.class
-                //i = new Intent(MainActivity.this, GroupActivity.class);
+                //TODO : uncomment GroupTripMap.class and comment CreateGroup.class
+                i = new Intent(MainActivity.this, GroupTripMap.class);
                 //i = new Intent(MainActivity.this, CreateGroup.class);
-                Toast.makeText(MainActivity.this, "Already part a group,"+
-                        " wait for our developers to create GroupActivity", Toast.LENGTH_LONG).show();
+               // Toast.makeText(MainActivity.this, "Already part a group,"+
+                      //  " wait for our developers to create GroupActivity", Toast.LENGTH_LONG).show();
             }
         }
         if(i != null){
