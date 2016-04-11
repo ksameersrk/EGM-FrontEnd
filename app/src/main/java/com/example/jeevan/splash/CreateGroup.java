@@ -34,6 +34,7 @@ public class CreateGroup extends AppCompatActivity {
 
     public static final String PREF_FILE = "PrefFile";
     private static final String PREF_GROUP_NAME = "GroupName";
+    private static final String PREF_GROUP_DEST = "GroupDestination";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -165,15 +166,13 @@ public class CreateGroup extends AppCompatActivity {
             String gName = mGroupName.getText().toString();
             String gDest = mDestination.getText().toString();
             Intent i = new Intent(CreateGroup.this, GroupTripMap.class);
-            b.putString("GroupName", gName != null ? gName : "");
-            b.putString("GroupDest", gDest != null ? gDest : "");
-            i.putExtras(b);
             getSharedPreferences(PREF_FILE, MODE_PRIVATE)
                     .edit()
-                    .putString(PREF_GROUP_NAME, mGroupName.getText().toString())
+                    .putString(PREF_GROUP_NAME, gName)
+                    .putString(PREF_GROUP_DEST, gDest)
                     .commit();
 
-
+            finish();
             startActivity(i);
         }
 
