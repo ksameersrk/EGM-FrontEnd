@@ -34,11 +34,14 @@
     <string name="registration_permission_rationale">"Contacts permissions are needed for providing email
         completions."
     </string>
+<<<<<<< HEAD
     <string name="title_activity_create_group">CreateGroup</string>
 
     <!-- Strings related to RoundAbout -->
     <string name="round_about">RoundAbout</string>
     <string name="title_activity_chat">ChatActivity</string>
     <string name="title_activity_group_trip_map">Map</string>
+=======
     <string name="title_activity_travel_diary">Map</string>
+>>>>>>> dff743d50af86fb4431b4f8a69eedcbe8a31559d
 </resources>
