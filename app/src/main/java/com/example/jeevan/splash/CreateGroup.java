@@ -22,6 +22,7 @@ import java.util.ArrayList;
 public class CreateGroup extends AppCompatActivity {
 
     private ListView listView;
+    Bundle b = new Bundle();
     private ArrayAdapter<String> listAdapter;
     private String my_sel_items;
     private ArrayList<String> selected_contacts;
@@ -159,7 +160,14 @@ public class CreateGroup extends AppCompatActivity {
     {
         if(noErrors()){
             //TODO: replace MainActivity.class to GroupTrip.class
-            Intent i = new Intent(CreateGroup.this, MainActivity.class);
+
+
+            String gName = mGroupName.getText().toString();
+            String gDest = mDestination.getText().toString();
+            Intent i = new Intent(CreateGroup.this, GroupTripMap.class);
+            b.putString("GroupName", gName != null ? gName : "");
+            b.putString("GroupDest", gDest != null ? gDest : "");
+            i.putExtras(b);
             getSharedPreferences(PREF_FILE, MODE_PRIVATE)
                     .edit()
                     .putString(PREF_GROUP_NAME, mGroupName.getText().toString())
