@@ -12,6 +12,7 @@ public class AlreadyLoggedInActivity extends AppCompatActivity {
     public static final String PREF_FILE = "PrefFile";
     private static final String PREF_USERNAME = "username";
     private static final String PREF_PASSWORD = "password";
+    private static final String PREF_GROUP_NAME = "GroupName";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,8 +35,9 @@ public class AlreadyLoggedInActivity extends AppCompatActivity {
     {
         getSharedPreferences(PREF_FILE, MODE_PRIVATE)
                 .edit()
-                .remove("username")
-                .remove("password")
+                .remove(PREF_USERNAME)
+                .remove(PREF_PASSWORD)
+                .remove(PREF_GROUP_NAME)
                 .commit();
         //startActivity(new Intent(AlreadyLoggedInActivity.this, MainActivity.class));
         finish();

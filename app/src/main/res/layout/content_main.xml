@@ -94,5 +94,19 @@
         android:textColor="#ffffff"
         android:textSize="22sp"
         android:onClick="callLogin"/>
+
+    <Button
+        android:layout_width="248dp"
+        android:layout_height="60dp"
+        android:text="Tmp"
+        android:id="@+id/button6"
+        android:layout_below="@+id/button5"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:background="#9fba78"
+        android:textStyle="bold"
+        android:textColor="#ffffff"
+        android:textSize="22sp"
+        android:onClick="tmpFunction"/>
 </RelativeLayout>
 
