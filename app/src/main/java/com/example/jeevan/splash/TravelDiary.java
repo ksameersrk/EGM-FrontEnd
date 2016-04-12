@@ -4,6 +4,7 @@ import android.Manifest;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
 import android.location.Location;
 import android.location.LocationListener;
@@ -78,7 +79,7 @@ public class TravelDiary extends FragmentActivity implements OnMapReadyCallback,
     private PopupWindow pw2;
     private PopupWindow pw3;
 
-    private String phNo = "5"; //// TODO: 08/04/16 get number from login page
+    private String phNo = ""; //// TODO: 08/04/16 get number from login page
     private int tripId = 0; //// TODO: 08/04/16 get from db
     private String placeName = "";
     private String op = "";
@@ -89,6 +90,8 @@ public class TravelDiary extends FragmentActivity implements OnMapReadyCallback,
     private HashMap<String, String> trips = null;
     private View currentInflatedLayout;
 
+    public static final String PREF_FILE = "PrefFile";
+    private static final String PREF_USERNAME = "username";
 
 
     //TravelDiaryParser parser;
@@ -121,6 +124,13 @@ public class TravelDiary extends FragmentActivity implements OnMapReadyCallback,
                 checkIn.setVisibility(View.INVISIBLE);
             }
         });
+
+        SharedPreferences pref = getSharedPreferences(PREF_FILE, MODE_PRIVATE);
+        if(pref != null && pref.getString(PREF_USERNAME, null) != null)
+        {
+            phNo = pref.getString(PREF_USERNAME, null);
+        }
+
         updatePlaces();
 
         // Add a marker in Sydney and move the camera
@@ -381,7 +391,7 @@ public class TravelDiary extends FragmentActivity implements OnMapReadyCallback,
             Log.v("JSON RESULT", e.toString());
         }
         //startTime = "07/08/16";
-        tripDesc.setText("Trip " + tripId + " (started on: " + startTime + ")\nYou have visited " + count + " number of places");
+        tripDesc.setText("Trip " + tripId + " (started on: " + startTime + ")\n" + count + " places visited");
     }
 
     /* close the diary pop-up window */
@@ -420,7 +430,7 @@ public class TravelDiary extends FragmentActivity implements OnMapReadyCallback,
                 (ViewGroup) findViewById(R.id.trips_diary));
         currentInflatedLayout = layout;
         // create a 300px width and 470px height PopupWindow
-        pw2 = new PopupWindow(layout, 300, 470, true);
+        pw2 = new PopupWindow(layout, 500, 470, true);
         TextView diaryText = (TextView) layout.findViewById(R.id.trips_list);
 
 
@@ -455,7 +465,7 @@ public class TravelDiary extends FragmentActivity implements OnMapReadyCallback,
                 (ViewGroup) findViewById(R.id.cont_diary));
         currentInflatedLayout = layout;
         // create a 300px width and 470px height PopupWindow
-        pw3 = new PopupWindow(layout, 300, 470, true);
+        pw3 = new PopupWindow(layout, 550, 470, true);
         pw3.showAtLocation(layout, Gravity.CENTER, 0, 0);
     }
     /* send which trip to continue */
@@ -491,7 +501,7 @@ public class TravelDiary extends FragmentActivity implements OnMapReadyCallback,
             haveStartedTrip = true;
             tripButton.setText("FINISH TRIP");
             placesDesc.setText("");
-            tripDesc.setText("Trip " + tripId + " (started on: " + startTime + ")\nYou have visited " + count + " number of places");
+            tripDesc.setText("Trip " + tripId + " (started on: " + startTime + ")\n " + count + " places visited");
 
 
             pw3.dismiss();

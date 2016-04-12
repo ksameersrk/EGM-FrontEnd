@@ -99,6 +99,7 @@ public class MapsActivity1 extends FragmentActivity implements OnMapReadyCallbac
             Log.d("Check", "onCreate: " + name + ":" + rating + ":" + address + ":" + url);
 
             int i;
+            float zoomLevel = 16;
             LatLng currentPos = new LatLng(currentLat.get(0), currentLon.get(0));
             for (i = 0; i < currentLat.size(); i++) {
                 currentPos = new LatLng(currentLat.get(i), currentLon.get(i));
@@ -112,7 +113,7 @@ public class MapsActivity1 extends FragmentActivity implements OnMapReadyCallbac
                 mMap.addMarker(new MarkerOptions().position(pos).title(des.get(i).get(0) + "\nRating: " + des.get(i).get(1)));
             }
 
-            mMap.moveCamera(CameraUpdateFactory.newLatLng(currentPos));//
+            mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(currentPos, zoomLevel));//
 
 
         }catch(Exception e){
