@@ -78,4 +78,9 @@ public class GroupTripMap extends FragmentActivity implements OnMapReadyCallback
     {
         startActivity(new Intent(GroupTripMap.this, ChatActivity.class));
     }
+
+    public void callMembers(View v)
+    {
+        startActivity(new Intent(GroupTripMap.this, MembersActivity.class));
+    }
 }
