@@ -475,23 +475,30 @@ public class TravelDiary extends FragmentActivity implements OnMapReadyCallback,
         int oldTripId = tripId;
         int oldCount = count;
         String oldStartTime = startTime;
-        tripId = Integer.parseInt(contTripId.getText().toString());
-
-
-        op = "6";
-        constructJSON();
-
-        //// TODO: 09/04/16 MAKE CONNECTION
+        Boolean isFine = true;
         try{
-            JSONObject inputJSON = new JSONObject("{\"op\":\"6\", \"trip_start_datetime\":\"7\", \"count\":7}");
-            Log.v("JSON RESULT", inputJSON.toString());
-            chooseParser(inputJSON);
+            tripId = Integer.parseInt(contTripId.getText().toString());
         }catch(Exception e){
-            Log.v("JSON RESULT", e.toString());
+            isFine = false;
+        }
+
+        if(isFine){
+            op = "6";
+            constructJSON();
+
+            //// TODO: 09/04/16 MAKE CONNECTION
+            try{
+                JSONObject inputJSON = new JSONObject("{\"op\":\"6\", \"trip_start_datetime\":\"7\", \"count\":7}");
+                Log.v("JSON RESULT", inputJSON.toString());
+                chooseParser(inputJSON);
+            }catch(Exception e){
+                Log.v("JSON RESULT", e.toString());
+            }
         }
 
 
-        if(count == -1){
+
+        if((count == -1) || (!(isFine))){
             Toast.makeText(TravelDiary.this, "INVALID TRIP", Toast.LENGTH_LONG).show();
             tripId = oldTripId;
             count = oldCount;
