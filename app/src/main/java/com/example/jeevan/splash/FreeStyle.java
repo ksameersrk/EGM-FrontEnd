@@ -181,8 +181,7 @@ public class FreeStyle extends Activity implements View.OnClickListener {
          try {
                 URL url = new URL(params[0]);
                 connection = (HttpURLConnection) url.openConnection();
-                connection.setRequestMethod("POST");
-                connection.setDoOutput(true);
+                connection.connect();
                 OutputStream os = connection.getOutputStream();
                 String send = params[1] + "::" +params[2];
                 os.write(send.getBytes());

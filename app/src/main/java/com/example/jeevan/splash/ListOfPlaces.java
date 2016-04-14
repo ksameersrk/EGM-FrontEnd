@@ -177,12 +177,8 @@ public class ListOfPlaces extends Activity implements View.OnClickListener {
         switch (view.getId()) {
             case R.id.givemeroute:
                 startActivity(new Intent(this, MapsActivity.class));
-                String data = selected_places.toString();
                 URL a = null;
-
-                try {
-
-
+                 try {
                     a = new URL("http://10.0.2.2:8000/hello");
 
                 } catch (MalformedURLException e) {
@@ -216,7 +212,7 @@ public class ListOfPlaces extends Activity implements View.OnClickListener {
                 InputStream is = connection.getInputStream();
                 BufferedReader br = new BufferedReader(new InputStreamReader(is));
                 StringBuilder sb = new StringBuilder();
-                String line = "";
+                String line;
                 while ((line = br.readLine()) != null) {
                     sb.append(line);
                 }
@@ -234,8 +230,6 @@ public class ListOfPlaces extends Activity implements View.OnClickListener {
             }
             return null;
         }
-
-
         @Override
         protected void onPostExecute(String result) {
             super.onPostExecute(result);
