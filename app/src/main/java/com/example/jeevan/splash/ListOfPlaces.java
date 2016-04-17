@@ -177,12 +177,8 @@ public class ListOfPlaces extends Activity implements View.OnClickListener {
         switch (view.getId()) {
             case R.id.givemeroute:
                 startActivity(new Intent(this, MapsActivity.class));
-                String data = selected_places.toString();
                 URL a = null;
-
-                try {
-
-
+                 try {
                     a = new URL("http://10.0.2.2:8000/hello");
 
                 } catch (MalformedURLException e) {
@@ -191,7 +187,6 @@ public class ListOfPlaces extends Activity implements View.OnClickListener {
                 selected_places.add(0,source);
                 selected_places.add(1,destination);
                 new sendData().execute(a.toString(),selected_places.toString());
-                new getData().execute(a.toString());
                 break;
             default:
                 break;
@@ -214,45 +209,14 @@ public class ListOfPlaces extends Activity implements View.OnClickListener {
                 os.write(send.getBytes());
                 os.flush();
                 os.close();
-                int response = connection.getResponseCode();
-                return response + "";
-            } catch (MalformedURLException e) {
-                e.printStackTrace();
-            } catch (IOException e) {
-                e.printStackTrace();
-
-            } finally {
-                if (connection != null)
-                    connection.disconnect();
-            }
-            return null;
-        }
-
-        @Override
-        protected void onPostExecute(String result) {
-            super.onPostExecute(result);
-            // Toast.makeText(FreeStyle.this,result,Toast.LENGTH_LONG).show();
-        }
-    }
-
-    class getData extends AsyncTask<String, String, String> {
-        @Override
-        protected String doInBackground(String... params) {
-            HttpURLConnection connection = null;
-            String data = null;
-            try {
-                URL url = new URL(params[0]);
-                connection = (HttpURLConnection) url.openConnection();
-                connection.setReadTimeout(10000);
-                connection.setConnectTimeout(15000);
                 InputStream is = connection.getInputStream();
                 BufferedReader br = new BufferedReader(new InputStreamReader(is));
                 StringBuilder sb = new StringBuilder();
-                String line = "";
+                String line;
                 while ((line = br.readLine()) != null) {
                     sb.append(line);
                 }
-                data = sb.toString();
+                String data = sb.toString();
                 br.close();
                 return data;
             } catch (MalformedURLException e) {
