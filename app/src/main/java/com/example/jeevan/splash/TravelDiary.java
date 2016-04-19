@@ -41,12 +41,14 @@ import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
 
 import org.json.JSONArray;
+import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
+import java.io.OutputStream;
 import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
@@ -80,11 +82,11 @@ public class TravelDiary extends FragmentActivity implements OnMapReadyCallback,
     private PopupWindow pw3;
 
     private String phNo = ""; //// TODO: 08/04/16 get number from login page
-    private int tripId = 0; //// TODO: 08/04/16 get from db
+    private int tripId; //// TODO: 08/04/16 get from db
     private String placeName = "";
     private String op = "";
 
-    private String startTime = "";
+    //private String startTime = "";
     private String review = "";
     private int count = 0;
     private HashMap<String, String> trips = null;
@@ -317,55 +319,33 @@ public class TravelDiary extends FragmentActivity implements OnMapReadyCallback,
             haveStartedTrip = true;
             op = "1";
             constructJSON();
-
-            //// TODO: 09/04/16 MAKE CONNECTION
-            try{
-                JSONObject inputJSON = new JSONObject("{\"op\":1, \"trip_id\":5}");
-                Log.v("CHECK JSON", inputJSON.get("op").toString());
-                Log.v("JSON RESULT", inputJSON.toString());
-                chooseParser(inputJSON);
-            }catch(Exception e){
-                Log.v("JSON RESULT", e.toString());
-            }
-
-
             tripButton.setText("FINISH TRIP");
             placesDesc.setText("");
-            displayTripDetails();
+
         }
         //IS FINISH TRIP
         else{
             Log.v("MyMapActivity", "it's hereee");
-            //We need to get the instance of the LayoutInflater, use the context of this activity
-            LayoutInflater inflater = (LayoutInflater) getBaseContext()
-                    .getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-
-            //Inflate the view from a predefined XML layout
-            View layout = inflater.inflate(R.layout.diary_popup,
-                    (ViewGroup) findViewById(R.id.popup_element));
-            currentInflatedLayout = layout;
-            // create a 300px width and 470px height PopupWindow
-            pw = new PopupWindow(layout, 300, 470, true);
-            TextView diaryText = (TextView) layout.findViewById(R.id.diary_text);
-            // display the popup in the center
-
-
             op = "4";
             constructJSON();
 
-            //// TODO: 09/04/16 MAKE CONNECTION
-            try{
-                JSONObject inputJSON = new JSONObject("{\"op\":4, \"trip_review\":\"blah blah\"}");
-                Log.v("CHECK JSON", inputJSON.get("op").toString());
-                Log.v("JSON RESULT", inputJSON.toString());
-                chooseParser(inputJSON);
-            }catch(Exception e){
-                Log.v("JSON RESULT", e.toString());
-            }
-            diaryText.setText(review);
-            pw.showAtLocation(layout, Gravity.CENTER, 0, 0);
-
         }
+    }
+    public void displayReview(){
+        //We need to get the instance of the LayoutInflater, use the context of this activity
+        LayoutInflater inflater = (LayoutInflater) getBaseContext()
+                .getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+
+        //Inflate the view from a predefined XML layout
+        View layout = inflater.inflate(R.layout.diary_popup,
+                (ViewGroup) findViewById(R.id.popup_element));
+        currentInflatedLayout = layout;
+        // create a 300px width and 470px height PopupWindow
+        pw = new PopupWindow(layout, 300, 470, true);
+        TextView diaryText = (TextView) layout.findViewById(R.id.diary_text);
+
+        diaryText.setText(review);
+        pw.showAtLocation(layout, Gravity.CENTER, 0, 0);
     }
     public void checkInButtonAction(View view){
 
@@ -374,7 +354,7 @@ public class TravelDiary extends FragmentActivity implements OnMapReadyCallback,
 
         placesDesc.setText("You have just checked in " + placeName + "");
         checkIn.setVisibility(View.INVISIBLE);
-        displayTripDetails();
+
     }
     public void displayTripDetails(){
 
@@ -382,16 +362,16 @@ public class TravelDiary extends FragmentActivity implements OnMapReadyCallback,
 
         constructJSON();
         //// TODO: 09/04/16 MAKE CONNECTION
-        try{
+        /*try{
             JSONObject inputJSON = new JSONObject("{\"op\":\"3\", \"trip_start_datetime\":\"5\", \"count\":5}");
             Log.v("CHECK JSON", inputJSON.get("op").toString());
             Log.v("JSON RESULT", inputJSON.toString());
             chooseParser(inputJSON);
         }catch(Exception e){
             Log.v("JSON RESULT", e.toString());
-        }
+        }*/
         //startTime = "07/08/16";
-        tripDesc.setText("Trip " + tripId + " (started on: " + startTime + ")\n" + count + " places visited");
+
     }
 
     /* close the diary pop-up window */
@@ -422,6 +402,11 @@ public class TravelDiary extends FragmentActivity implements OnMapReadyCallback,
 
 
     public void viewTablesAction(View view){
+        op = "5";
+        constructJSON();
+
+    }
+    public void displayTrips(){
         LayoutInflater inflater = (LayoutInflater) getBaseContext()
                 .getSystemService(Context.LAYOUT_INFLATER_SERVICE);
 
@@ -433,18 +418,6 @@ public class TravelDiary extends FragmentActivity implements OnMapReadyCallback,
         pw2 = new PopupWindow(layout, 500, 470, true);
         TextView diaryText = (TextView) layout.findViewById(R.id.trips_list);
 
-
-        op = "5";
-        constructJSON();
-        //// TODO: 09/04/16 MAKE CONNECTION
-        try{
-            JSONObject inputJSON = new JSONObject("{\"op\":5, \"trips\":{\"1\":\"hi\", \"2\":\"bye\"}}");
-            Log.v("CHECK JSON", inputJSON.get("op").toString());
-            Log.v("JSON RESULT", inputJSON.toString());
-            chooseParser(inputJSON);
-        }catch(Exception e){
-            Log.v("JSON RESULT", e.toString());
-        }
         String text = "";
         for (Map.Entry<String, String> entry : trips.entrySet()) {
             String key = entry.getKey();
@@ -471,10 +444,10 @@ public class TravelDiary extends FragmentActivity implements OnMapReadyCallback,
     /* send which trip to continue */
     public void continueTripAction(View view){
 
-        EditText contTripId = (EditText)currentInflatedLayout.findViewById(R.id.editText);
+        EditText contTripId = (EditText) currentInflatedLayout.findViewById(R.id.editText);
         int oldTripId = tripId;
         int oldCount = count;
-        String oldStartTime = startTime;
+        //String oldStartTime = startTime;
         Boolean isFine = true;
         try{
             tripId = Integer.parseInt(contTripId.getText().toString());
@@ -486,14 +459,6 @@ public class TravelDiary extends FragmentActivity implements OnMapReadyCallback,
             op = "6";
             constructJSON();
 
-            //// TODO: 09/04/16 MAKE CONNECTION
-            try{
-                JSONObject inputJSON = new JSONObject("{\"op\":\"6\", \"trip_start_datetime\":\"7\", \"count\":7}");
-                Log.v("JSON RESULT", inputJSON.toString());
-                chooseParser(inputJSON);
-            }catch(Exception e){
-                Log.v("JSON RESULT", e.toString());
-            }
         }
 
 
@@ -502,15 +467,12 @@ public class TravelDiary extends FragmentActivity implements OnMapReadyCallback,
             Toast.makeText(TravelDiary.this, "INVALID TRIP", Toast.LENGTH_LONG).show();
             tripId = oldTripId;
             count = oldCount;
-            startTime = oldStartTime;
+            //startTime = oldStartTime;
         }
         else {
             haveStartedTrip = true;
             tripButton.setText("FINISH TRIP");
             placesDesc.setText("");
-            tripDesc.setText("Trip " + tripId + " (started on: " + startTime + ")\n " + count + " places visited");
-
-
             pw3.dismiss();
         }
 
@@ -524,6 +486,8 @@ public class TravelDiary extends FragmentActivity implements OnMapReadyCallback,
             obj.put("tripId", tripId);
             obj.put("placeName", placeName);
             Log.v("JSON OUTPUT", obj.toString());
+            Log.v("JSON OUTPUT", tripId+"");
+            new sendData().execute("http://192.168.0.106:8000/f4",obj.toString());
 
         }catch(Exception e){
             Log.v("JSON OUTPUT", e.toString());
@@ -531,44 +495,33 @@ public class TravelDiary extends FragmentActivity implements OnMapReadyCallback,
     }
     public void chooseParser(JSONObject inputJSON){
         try{
-            int op = Integer.parseInt(inputJSON.get("op").toString());
+            int op = Integer.parseInt(inputJSON.get("Op").toString());
             switch(op){
-                /*case 1:
-                    tripId = parser.parseTripId(inputJSON);
-                    break;
-                case 3:
-                    startTime = parser.parseStartTime(inputJSON);
-                    count = parser.parseCount(inputJSON);
-                    break;
-                case 4:
-                    review = parser.parseReview(inputJSON);
-                    break;
-                case 5:
-                    trips = parser.parseTrips(inputJSON);
-                    break;
-                case 6:
-                    startTime = parser.parseStartTime(inputJSON);
-                    count = parser.parseCount(inputJSON);
-                    break;
-                default:
-                    Log.v("JSON PARSE", "problem switching");*/
-
                 case 1:
+                    Log.i("Sharon log : ",inputJSON.toString());
                     tripId = parseTripId(inputJSON);
+                    Log.i("Sharon log : ",tripId+"");
+                    displayTripDetails();
                     break;
+                case 2:
+                    displayTripDetails();
                 case 3:
-                    startTime = parseStartTime(inputJSON);
+                    //startTime = parseStartTime(inputJSON);
                     count = parseCount(inputJSON);
+                    tripDesc.setText("Trip " + tripId + " \n" + count + " places visited");
                     break;
                 case 4:
                     review = parseReview(inputJSON);
+                    displayReview();
                     break;
                 case 5:
                     trips = parseTrips(inputJSON);
+                    displayTrips();
                     break;
                 case 6:
-                    startTime = parseStartTime(inputJSON);
+                    // startTime = parseStartTime(inputJSON);
                     count = parseCount(inputJSON);
+                    tripDesc.setText("Trip " + tripId + " \n " + count + " places visited");
                     break;
                 default:
                     Log.v("JSON PARSE", "problem switching");
@@ -584,6 +537,7 @@ public class TravelDiary extends FragmentActivity implements OnMapReadyCallback,
     public int parseTripId(JSONObject inputJSON){
         int trip_id = -1;
         try{
+            Log.i("sharon log",inputJSON.toString());
             trip_id = (Integer)inputJSON.get("trip_id");
         }catch(Exception e){
             Log.v("PARSER TRIP ID", e.toString());
@@ -611,7 +565,7 @@ public class TravelDiary extends FragmentActivity implements OnMapReadyCallback,
     public String parseReview(JSONObject inputJSON){
         String review = "";
         try{
-            review = (String)inputJSON.get("trip_review");
+            review = (String)inputJSON.get("review");
         }catch(Exception e){
             Log.v("PARSER REVIEW", e.toString());
         }
@@ -621,7 +575,7 @@ public class TravelDiary extends FragmentActivity implements OnMapReadyCallback,
         HashMap<String, String> trips = new HashMap<String, String>();
         JSONObject json;
         try{
-            json = inputJSON.getJSONObject("trips");
+            json = inputJSON.getJSONObject("Trips");
             Iterator<String> keys = json.keys();
             while(keys.hasNext()){
                 String key = keys.next();
@@ -632,6 +586,67 @@ public class TravelDiary extends FragmentActivity implements OnMapReadyCallback,
             Log.v("PARSER TRIPS", e.toString());
         }
         return trips;
+    }
+    class sendData extends AsyncTask<String, String,String> {
+        @Override
+        protected String doInBackground(String... params) {
+            HttpURLConnection connection = null;
+            String data = null;
+            try {
+                Log.v("sharon log", params[1] + "1");
+                URL url = new URL(params[0]);
+                Log.v("sharon log", params[1] + "2");
+                connection = (HttpURLConnection) url.openConnection();
+                Log.v("sharon log", params[1] + "3");
+                connection.setRequestMethod("POST");
+                Log.v("sharon log", params[1] + "4");
+                connection.setDoOutput(true);
+                Log.v("sharon log", params[1] + "5");
+                OutputStream os = connection.getOutputStream();
+                Log.v("sharon log", params[1] + "6");
+                String send = params[1];
+                Log.v("sharon log", params[1] + "7");
+                os.write(send.getBytes());
+                os.flush();
+                os.close();
+                InputStream is = connection.getInputStream();
+                BufferedReader br = new BufferedReader(new InputStreamReader(is));
+                StringBuilder sb = new StringBuilder();
+                String line = "";
+                while ((line = br.readLine()) != null) {
+                    sb.append(line);
+                }
+
+                data = sb.toString();
+                br.close();
+                return data;
+
+
+            } catch (MalformedURLException e) {
+                e.printStackTrace();
+                Log.v("sharon log", params[1] + "MalURL");
+            } catch (IOException e) {
+                e.printStackTrace();
+                Log.v("sharon log", params[1] + "IOEXC");
+
+            } finally {
+                if (connection != null)
+                    connection.disconnect();
+            }
+            return null;
+        }
+        @Override
+        protected void onPostExecute(String result) {
+            super.onPostExecute(result);
+            JSONObject object=null;
+            try {
+                object = new JSONObject(result);
+            } catch (JSONException e) {
+                e.printStackTrace();
+            }
+            chooseParser(object);
+
+        }
     }
 
 }
