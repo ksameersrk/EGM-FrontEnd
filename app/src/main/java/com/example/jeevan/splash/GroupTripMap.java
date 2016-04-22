@@ -59,14 +59,25 @@ public class GroupTripMap extends FragmentActivity implements OnMapReadyCallback
 
     public void onMapReady(GoogleMap googleMap) {
         mMap = googleMap;
+         double lat= location.getLatitude();
+        double lng = location.getLongitude();
+        LatLng ll = new LatLng(lat, lng);
+        mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(ll, 20));
+       /* map.setMyLocationEnabled(true);
+        location = map.getMyLocation();
 
-
-
+        if (location != null) {
+            myLocation = new LatLng(location.getLatitude(),
+                location.getLongitude());
+        }
+        map.animateCamera(CameraUpdateFactory.newLatLngZoom(myLocation,
+            Constants.MAP_ZOOM));
+        */
         // Add a marker in Sydney and move the camera
-        LatLng banglore = new LatLng(12.93, 77.53);
-        LatLng mysore = new LatLng(12.3,76.65);
-        mMap.addMarker(new MarkerOptions().position(banglore).title("Marker in bangalore"));
-        mMap.addMarker(new MarkerOptions().position(mysore).title("Marker in Mysore"));
+        //LatLng banglore = new LatLng(12.93, 77.53);
+        //LatLng mysore = new LatLng(12.3,76.65);
+        //mMap.addMarker(new MarkerOptions().position(banglore).title("Marker in bangalore"));
+        //mMap.addMarker(new MarkerOptions().position(mysore).title("Marker in Mysore"));
         //mMap.moveCamera(CameraUpdateFactory.newLatLng(mysore));
     }
     public void exit(View v)
