@@ -18,6 +18,7 @@ import android.widget.GridLayout;
 import android.widget.ImageButton;
 import android.widget.LinearLayout;
 import android.widget.RadioGroup;
+import android.widget.ScrollView;
 import android.widget.SeekBar;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -57,6 +58,7 @@ public class RoundAbout extends AppCompatActivity {
     List<EditText> allEds = new ArrayList<>();
     private ProgressDialog progress=null;
     private LinearLayout mLayout;
+    private ScrollView mScroll;
     private EditText mEditText;
     private Button mButton;
     @Override
@@ -64,6 +66,7 @@ public class RoundAbout extends AppCompatActivity {
         // TODO Auto-generated method stub
         super.onCreate(savedInstanceState);
         setContentView(round_about);
+        mScroll = (ScrollView) findViewById(R.id.scrollRound);
         mLayout = (LinearLayout) findViewById(R.id.linearLayout);
         mEditText = (EditText) findViewById(R.id.user_location);
         mButton = (Button) findViewById(R.id.button);
@@ -126,7 +129,16 @@ public class RoundAbout extends AppCompatActivity {
         editText.setLayoutParams(lparams);
         editText.getLayoutParams().width=520;
         editText.getLayoutParams().height=90;
+        editText.requestFocus();
         allEds.add(editText);
+        mScroll.post(new Runnable() {
+
+            @Override
+            public void run() {
+                // mScroll.fullScroll(ScrollView.FOCUS_DOWN);
+                mScroll.scrollTo(0, mScroll.getBottom());
+            }
+        });
         return editText;
     }
 
