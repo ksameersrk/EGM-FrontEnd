@@ -37,7 +37,48 @@ import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
+import android.app.Activity;
+import android.app.ProgressDialog;
+import android.content.Context;
+import android.content.Intent;
+import android.location.Address;
+import android.location.Geocoder;
+import android.os.AsyncTask;
+import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.AppCompatImageButton;
+import android.util.Log;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.ArrayAdapter;
+import android.widget.AutoCompleteTextView;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.Filter;
+import android.widget.Filterable;
+import android.widget.GridLayout;
+import android.widget.ImageButton;
+import android.widget.LinearLayout;
+import android.widget.RadioGroup;
+import android.widget.SeekBar;
+import android.widget.TextView;
+import android.widget.Toast;
 
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.io.BufferedReader;
+import java.io.DataOutputStream;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.io.OutputStream;
+import java.net.HttpURLConnection;
+import java.net.MalformedURLException;
+import java.net.URL;
+import java.util.ArrayList;
+import java.util.List;
 import static com.example.jeevan.splash.R.layout.round_about;
 
 /**
@@ -55,11 +96,11 @@ public class RoundAbout extends AppCompatActivity {
     String data;
     String radius;
     String localhost = "http://192.168.0.106:8000/test";
-    List<EditText> allEds = new ArrayList<>();
+    List<AutoCompleteTextView> allEds = new ArrayList<>();
     private ProgressDialog progress=null;
     private LinearLayout mLayout;
     private ScrollView mScroll;
-    private EditText mEditText;
+    private AutoCompleteTextView mEditText;
     private Button mButton;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -68,7 +109,8 @@ public class RoundAbout extends AppCompatActivity {
         setContentView(round_about);
         mScroll = (ScrollView) findViewById(R.id.scrollRound);
         mLayout = (LinearLayout) findViewById(R.id.linearLayout);
-        mEditText = (EditText) findViewById(R.id.user_location);
+        mEditText = (AutoCompleteTextView) findViewById(R.id.user_location);
+        mEditText.setAdapter(new AutoCompleteAdapter(this));
         mButton = (Button) findViewById(R.id.button);
         mButton.setOnClickListener(onClick());
         progress = new ProgressDialog(this);
@@ -123,13 +165,14 @@ public class RoundAbout extends AppCompatActivity {
         };
     }
 
-    private EditText createNewEditTextView() {
+    private AutoCompleteTextView createNewEditTextView() {
         final GridLayout.LayoutParams lparams = new GridLayout.LayoutParams();
-        final EditText editText = new EditText(this);
+        final AutoCompleteTextView editText = new AutoCompleteTextView(this);
         editText.setLayoutParams(lparams);
         editText.getLayoutParams().width=520;
         editText.getLayoutParams().height=90;
         editText.requestFocus();
+        editText.setAdapter(new AutoCompleteAdapter(this));
         allEds.add(editText);
         mScroll.post(new Runnable() {
 
@@ -181,7 +224,7 @@ public class RoundAbout extends AppCompatActivity {
                 e.printStackTrace();
 
             } finally {
-                if(connection != null)
+                if (connection != null)
                     connection.disconnect();
             }
             return null;
@@ -196,6 +239,88 @@ public class RoundAbout extends AppCompatActivity {
             i.putExtras(b);
             startActivity(i);
         }
+    }
+    private class AutoCompleteAdapter extends ArrayAdapter<Address> implements Filterable {
+
+        private LayoutInflater mInflater;
+        private Geocoder mGeocoder;
+        private StringBuilder mSb = new StringBuilder();
+
+        public AutoCompleteAdapter(final Context context) {
+            super(context, -1);
+            mInflater = LayoutInflater.from(context);
+            mGeocoder = new Geocoder(context);
+        }
+
+        @Override
+        public View getView(final int position, final View convertView, final ViewGroup parent) {
+            final TextView tv;
+            if (convertView != null) {
+                tv = (TextView) convertView;
+            } else {
+                tv = (TextView) mInflater.inflate(android.R.layout.simple_dropdown_item_1line, parent, false);
+            }
+
+            tv.setText(createFormattedAddressFromAddress(getItem(position)));
+            return tv;
+        }
+
+        private String createFormattedAddressFromAddress(final Address address) {
+            mSb.setLength(0);
+            final int addressLineSize = address.getMaxAddressLineIndex();
+            for (int i = 0; i < addressLineSize; i++) {
+                mSb.append(address.getAddressLine(i));
+                if (i != addressLineSize - 1) {
+                    mSb.append(", ");
+                }
+            }
+            return mSb.toString();
+        }
+        @Override
+        public Filter getFilter() {
+            Filter myFilter = new Filter() {
+                @Override
+                protected FilterResults performFiltering(final CharSequence constraint) {
+                    List<Address> addressList = null;
+                    if (constraint != null) {
+                        try {
+                            addressList = mGeocoder.getFromLocationName((String) constraint, 5);
+                        } catch (IOException e) {
+                        }
+                    }
+                    if (addressList == null) {
+                        addressList = new ArrayList<Address>();
+                    }
+
+                    final FilterResults filterResults = new FilterResults();
+                    filterResults.values = addressList;
+                    filterResults.count = addressList.size();
+
+                    return filterResults;
+                }
+
+                @SuppressWarnings("unchecked")
+                @Override
+                protected void publishResults(final CharSequence contraint, final Filter.FilterResults results) {
+                    clear();
+                    for (Address address : (List<Address>) results.values) {
+                        add(address);
+                    }
+                    if (results.count > 0) {
+                        notifyDataSetChanged();
+                    } else {
+                        notifyDataSetInvalidated();
+                    }
+                }
+
+                @Override
+                public CharSequence convertResultToString(final Object resultValue) {
+                    return resultValue == null ? "" : ((Address) resultValue).getAddressLine(0);
+                }
+            };
+            return myFilter;
+        }
+
     }
 
 }
