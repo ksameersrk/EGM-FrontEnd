@@ -72,7 +72,7 @@
             android:layout_height="326dp"
             android:id="@+id/linearLayout"
             >
-            <EditText
+            <AutoCompleteTextView
                 android:layout_width="350dp"
                 android:layout_height="40dp"
                 android:id="@+id/user_location"
@@ -82,6 +82,7 @@
                 android:layout_centerHorizontal="true"
                 android:layout_x="13dp"
                 android:layout_y="69dp" />
+
 
 
             <Button
