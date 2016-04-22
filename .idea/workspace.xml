@@ -33,34 +33,69 @@
       <file leaf-file-name="RoundAbout.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/jeevan/splash/RoundAbout.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="112" column="60" selection-start-line="112" selection-start-column="18" selection-end-line="112" selection-end-column="60" />
+            <state vertical-scroll-proportion="-7.5185184">
+              <caret line="219" column="42" selection-start-line="219" selection-start-column="42" selection-end-line="219" selection-end-column="42" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#5934#6149#0" expanded="true" />
-                <element signature="e#6148#6149#0" expanded="true" />
+                <element signature="e#4598#5701#0" expanded="true" />
+                <element signature="e#5700#5701#0" expanded="true" />
+                <element signature="e#6450#6665#0" expanded="true" />
+                <element signature="e#6664#6665#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="CreateGroup.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="CreateGroup.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/jeevan/splash/CreateGroup.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.4918033">
-              <caret line="76" column="26" selection-start-line="76" selection-start-column="26" selection-end-line="76" selection-end-column="26" />
+            <state vertical-scroll-proportion="0.0">
+              <caret line="85" column="52" selection-start-line="85" selection-start-column="52" selection-end-line="85" selection-end-column="52" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="round_about.xml" pinned="false" current-in-tab="false">
+      <file leaf-file-name="TravelDiary.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/jeevan/splash/TravelDiary.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-9.740741">
+              <caret line="466" column="12" selection-start-line="466" selection-start-column="12" selection-end-line="466" selection-end-column="87" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="FreeStyle.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/jeevan/splash/FreeStyle.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="78" column="112" selection-start-line="78" selection-start-column="12" selection-end-line="78" selection-end-column="112" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="free_style.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/free_style.xml">
+          <provider editor-type-id="android-designer">
+            <state />
+          </provider>
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="28.448277">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="round_about.xml" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/round_about.xml">
           <provider editor-type-id="android-designer">
             <state />
           </provider>
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-8.793103">
+            <state vertical-scroll-proportion="0.75667655">
               <caret line="92" column="0" selection-start-line="92" selection-start-column="0" selection-end-line="92" selection-end-column="0" />
               <folding />
             </state>
@@ -1981,8 +2016,9 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/app/src/main/res/layout/round_about.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/example/jeevan/splash/RoundAbout.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/jeevan/splash/CreateGroup.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/example/jeevan/splash/FreeStyle.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/example/jeevan/splash/RoundAbout.java" />
       </list>
     </option>
   </component>
@@ -2332,8 +2368,10 @@
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#5934#6149#0" expanded="true" />
-            <element signature="e#6148#6149#0" expanded="true" />
+            <element signature="e#4598#5701#0" expanded="true" />
+            <element signature="e#5700#5701#0" expanded="true" />
+            <element signature="e#6450#6665#0" expanded="true" />
+            <element signature="e#6664#6665#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -2345,17 +2383,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="128" column="36" selection-start-line="128" selection-start-column="36" selection-end-line="128" selection-end-column="36" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/round_about.xml">
-      <provider editor-type-id="android-designer">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-8.793103">
-          <caret line="92" column="0" selection-start-line="92" selection-start-column="0" selection-end-line="92" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -2378,20 +2405,60 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/jeevan/splash/RoundAbout.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="112" column="60" selection-start-line="112" selection-start-column="18" selection-end-line="112" selection-end-column="60" />
+        <state vertical-scroll-proportion="-7.5185184">
+          <caret line="219" column="42" selection-start-line="219" selection-start-column="42" selection-end-line="219" selection-end-column="42" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#5934#6149#0" expanded="true" />
-            <element signature="e#6148#6149#0" expanded="true" />
+            <element signature="e#4598#5701#0" expanded="true" />
+            <element signature="e#5700#5701#0" expanded="true" />
+            <element signature="e#6450#6665#0" expanded="true" />
+            <element signature="e#6664#6665#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/jeevan/splash/CreateGroup.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.4918033">
-          <caret line="76" column="26" selection-start-line="76" selection-start-column="26" selection-end-line="76" selection-end-column="26" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="85" column="52" selection-start-line="85" selection-start-column="52" selection-end-line="85" selection-end-column="52" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/jeevan/splash/TravelDiary.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-9.740741">
+          <caret line="466" column="12" selection-start-line="466" selection-start-column="12" selection-end-line="466" selection-end-column="87" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/jeevan/splash/FreeStyle.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="78" column="112" selection-start-line="78" selection-start-column="12" selection-end-line="78" selection-end-column="112" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/free_style.xml">
+      <provider editor-type-id="android-designer">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="28.448277">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/round_about.xml">
+      <provider editor-type-id="android-designer">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.75667655">
+          <caret line="92" column="0" selection-start-line="92" selection-start-column="0" selection-end-line="92" selection-end-column="0" />
           <folding />
         </state>
       </provider>

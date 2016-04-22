@@ -141,15 +141,28 @@ public class RoundAbout extends AppCompatActivity {
         getPlaces.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                boolean allValuesEntered = true;
                 user_location = location.getText().toString();
+                if(user_location.equals("")){
+                    allValuesEntered = false;
+                }
                 radius = seekBarValue.getText().toString();
                 data = user_location+"::"+radius;
 
                 for(int i=0; i < allEds.size(); i++){
                     data += "::" + allEds.get(i).getText().toString();
+                    if(allEds.get(i).getText().toString().equals("")){
+                        allValuesEntered = false;
+                    }
                 }
-                Log.i("--DEBUG--", "---------------------------------WORKS------------------------\n" + data);
-                new postData().execute();
+                if(allValuesEntered){
+                    Log.i("--DEBUG--", "---------------------------------WORKS------------------------\n" + data);
+                    new postData().execute();
+                }
+                else{
+                    Toast.makeText(RoundAbout.this, "PLEASE ENTER ALL LOCATIONS", Toast.LENGTH_LONG).show();
+                }
+
 
             }
         });
