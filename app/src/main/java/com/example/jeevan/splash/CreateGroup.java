@@ -17,6 +17,8 @@ import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.Toast;
 
+import org.json.JSONObject;
+
 import java.util.ArrayList;
 
 public class CreateGroup extends AppCompatActivity {
@@ -171,9 +173,29 @@ public class CreateGroup extends AppCompatActivity {
                     .putString(PREF_GROUP_NAME, gName)
                     .putString(PREF_GROUP_DEST, gDest)
                     .commit();
-
+            createJson(gName, gDest);
             finish();
             startActivity(i);
+        }
+
+    }
+
+    public void createJson(String gName, String gDest)
+    {
+        ArrayList<String> members = new ArrayList<String>();
+        for(String k : selected_contacts)
+        {
+            members.add(k.split(":")[1].trim());
+        }
+        try{
+            JSONObject obj = new JSONObject();
+            obj.put("gname", gName);
+            obj.put("gdest", gDest);
+            obj.put("members", members.toString());
+        }
+        catch (Exception e)
+        {
+            Log.i("error", "createGroup");
         }
 
     }

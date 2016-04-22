@@ -20,6 +20,7 @@ import android.os.Build;
 import android.os.Bundle;
 import android.provider.ContactsContract;
 import android.text.TextUtils;
+import android.util.Log;
 import android.view.KeyEvent;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -29,6 +30,8 @@ import android.widget.AutoCompleteTextView;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+
+import org.json.JSONObject;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -301,12 +304,12 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
      */
     public class UserLoginTask extends AsyncTask<Void, Void, Boolean> {
 
-        private final String mPhoneNumber;
-        private final String mPassword;
+        private final String phoneNumber;
+        private final String password;
 
         UserLoginTask(String phoneNumber, String password) {
-            mPhoneNumber = phoneNumber;
-            mPassword = password;
+            this.phoneNumber = phoneNumber;
+            this.password = password;
         }
 
         @Override
@@ -320,12 +323,25 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
                 return false;
             }
 
-            for (String credential : DUMMY_CREDENTIALS) {
+            /*for (String credential : DUMMY_CREDENTIALS) {
                 String[] pieces = credential.split(":");
-                if (pieces[0].equals(mPhoneNumber)) {
+                if (pieces[0].equals(phoneNumber)) {
                     // Account exists, return true if the password matches.
-                    return pieces[1].equals(mPassword);
+                    return pieces[1].equals(password);
                 }
+            }*/
+            //We have phoneNumber, password
+            try{
+                JSONObject obj = new JSONObject();
+                obj.put("op", 1);
+                obj.put("phone", phoneNumber);
+                obj.put("password", password);
+                // TODO: 20/4/16 Send data
+
+            }
+            catch (Exception e)
+            {
+                Log.v("DB", "doInBackground") ;
             }
 
             // TODO: return false if not registered 
@@ -343,8 +359,8 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
                 //SharedPreferences pref = getSharedPreferences(PREF_FILE, MODE_PRIVATE);
                 getSharedPreferences(PREF_FILE, MODE_PRIVATE)
                         .edit()
-                        .putString(PREF_USERNAME, mPhoneNumber)
-                        .putString(PREF_PASSWORD, mPassword)
+                        .putString(PREF_USERNAME, phoneNumber)
+                        .putString(PREF_PASSWORD, password)
                         .commit();
                 //startActivity(new Intent(LoginActivity.this, MainActivity.class));
                 String nextWindow = getIntent().getExtras().getString("nextWindow");

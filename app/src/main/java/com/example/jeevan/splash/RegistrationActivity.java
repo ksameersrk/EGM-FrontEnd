@@ -19,6 +19,7 @@ import android.os.Build;
 import android.os.Bundle;
 import android.provider.ContactsContract;
 import android.text.TextUtils;
+import android.util.Log;
 import android.view.KeyEvent;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -29,6 +30,8 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import org.json.JSONObject;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -58,6 +61,9 @@ public class RegistrationActivity extends AppCompatActivity implements LoaderCal
     private EditText mUserAge;
     private View mProgressView;
     private View mLoginFormView;
+
+    private String age;
+    private String name;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -159,8 +165,8 @@ public class RegistrationActivity extends AppCompatActivity implements LoaderCal
         String phone_number = mPhoneNumberView.getText().toString();
         String password1 = mPasswordView1.getText().toString();
         String password2 = mPasswordView2.getText().toString();
-        String name = mUserName.getText().toString();
-        String age = mUserAge.getText().toString();
+        name = mUserName.getText().toString();
+        age = mUserAge.getText().toString();
 
         boolean cancel = false;
         View focusView = null;
@@ -330,12 +336,12 @@ public class RegistrationActivity extends AppCompatActivity implements LoaderCal
      */
     public class UserLoginTask extends AsyncTask<Void, Void, Boolean> {
 
-        private final String mPhoneNumber;
-        private final String mPassword;
+        private final String phoneNumber;
+        private final String password;
 
         UserLoginTask(String phoneNumber, String password) {
-            mPhoneNumber = phoneNumber;
-            mPassword = password;
+            this.phoneNumber = phoneNumber;
+            this.password = password;
         }
 
         @Override
@@ -348,14 +354,26 @@ public class RegistrationActivity extends AppCompatActivity implements LoaderCal
             } catch (InterruptedException e) {
                 return false;
             }
+            /*
+                We have phoneNumber
+                        password
+                        name
+                        age
+            */
+            try{
+                JSONObject obj = new JSONObject();
+                obj.put("op", 0);
+                obj.put("phone", phoneNumber);
+                obj.put("name", name);
+                obj.put("password", password);
+                obj.put("age", age);
+                // TODO: 20/4/16 Send data
 
-            /*for (String credential : DUMMY_CREDENTIALS) {
-                String[] pieces = credential.split(":");
-                if (pieces[0].equals(mPhoneNumber)) {
-                    // Account exists, return true if the password matches.
-                    return pieces[1].equals(mPassword);
-                }
-            }*/
+            }
+            catch (Exception e)
+            {
+               Log.v("DB", "doInBackground") ;
+            }
 
             // TODO: register the new account here.
             return true;

@@ -15,6 +15,8 @@ import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.TextView;
 
+import org.json.JSONObject;
+
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
@@ -25,6 +27,8 @@ public class MembersActivity extends AppCompatActivity {
     private ListView listView;
     ArrayList<String> contacts;
     private TextView mGroupName;
+    public static final String PREF_FILE = "PrefFile";
+    private static final String PREF_USERNAME = "username";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,6 +38,15 @@ public class MembersActivity extends AppCompatActivity {
         mGroupName = (TextView)findViewById(R.id.member_group_name);
         mGroupName.setText(getGroupName());
 
+        try{
+            String phoneNumber = getSharedPreferences(PREF_FILE, MODE_PRIVATE).getString(PREF_USERNAME, null);
+            JSONObject obj = new JSONObject();
+            obj.put("phone_number", phoneNumber);
+        }
+        catch (Exception e)
+        {
+            Log.i("error", "get list of members");
+        }
         contacts = getMembers();
         display();
     }
