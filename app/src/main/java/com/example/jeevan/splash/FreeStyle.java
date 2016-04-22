@@ -10,6 +10,7 @@ import android.location.Address;
 import android.location.Geocoder;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -22,6 +23,7 @@ import android.widget.Filterable;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.AdapterView;
+import android.widget.Toast;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -73,17 +75,20 @@ public class FreeStyle extends Activity implements View.OnClickListener {
         URL a = null;
         source = ((AutoCompleteTextView)findViewById(R.id.auto_from)).getText().toString();
         destination = ((AutoCompleteTextView)findViewById(R.id.auto_to)).getText().toString();
+        if((source.equals("")) || (destination.equals(""))){
+            Toast.makeText(FreeStyle.this, "PLEASE ENTER A SOURCE AND A DESTINATION", Toast.LENGTH_LONG).show();
+        }
+        else{
+            try {
+                a = new URL("http://192.168.0.106:8000/f1m2");
 
-        try {
-
-
-            a = new URL("http://192.168.0.106:8000/f1m2");
-
-        } catch (MalformedURLException e) {
-            e.printStackTrace();
+            } catch (MalformedURLException e) {
+                e.printStackTrace();
+            }
+            Log.i("SHARON GO", "SENDING");
+            new sendData().execute(a.toString(), source, destination);
         }
 
-        new sendData().execute(a.toString(), source, destination);
 
     }
 
