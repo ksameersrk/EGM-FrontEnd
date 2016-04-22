@@ -17,6 +17,7 @@ import android.widget.EditText;
 import android.widget.GridLayout;
 import android.widget.ImageButton;
 import android.widget.LinearLayout;
+import android.widget.RadioGroup;
 import android.widget.SeekBar;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -33,6 +34,8 @@ import java.io.OutputStream;
 import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
+import java.util.ArrayList;
+import java.util.List;
 
 import static com.example.jeevan.splash.R.layout.round_about;
 
@@ -48,8 +51,10 @@ public class RoundAbout extends AppCompatActivity {
     EditText location;
     SeekBar seekBar;
     String user_location;
+    String data;
     String radius;
     String localhost = "http://192.168.0.106:8000/test";
+    List<EditText> allEds = new ArrayList<>();
     private ProgressDialog progress=null;
     private LinearLayout mLayout;
     private EditText mEditText;
@@ -93,6 +98,12 @@ public class RoundAbout extends AppCompatActivity {
             public void onClick(View v) {
                 user_location = location.getText().toString();
                 radius = seekBarValue.getText().toString();
+                data = user_location+"::"+radius;
+
+                for(int i=0; i < allEds.size(); i++){
+                    data += "::" + allEds.get(i).getText().toString();
+                }
+                Log.i("--DEBUG--", "---------------------------------WORKS------------------------\n" + data);
                 new postData().execute();
 
             }
@@ -115,7 +126,7 @@ public class RoundAbout extends AppCompatActivity {
         editText.setLayoutParams(lparams);
         editText.getLayoutParams().width=520;
         editText.getLayoutParams().height=90;
-
+        allEds.add(editText);
         return editText;
     }
 
@@ -137,7 +148,7 @@ public class RoundAbout extends AppCompatActivity {
                 connection.setRequestMethod("POST");
                 connection.setDoOutput(true);
                 OutputStream os = connection.getOutputStream();
-                String send = user_location + "::" +radius;
+                String send = data;
                 os.write(send.getBytes());
                 os.flush();
                 os.close();

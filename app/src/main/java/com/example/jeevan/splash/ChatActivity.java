@@ -16,6 +16,8 @@ import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.TextView;
 
+import org.json.JSONObject;
+
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
@@ -28,6 +30,8 @@ public class ChatActivity extends AppCompatActivity {
     ArrayList<String> messages;
     private TextView mGroupName;
     private EditText mMsgText;
+    public static final String PREF_FILE = "PrefFile";
+    private static final String PREF_USERNAME = "username";
 
 
 
@@ -40,6 +44,17 @@ public class ChatActivity extends AppCompatActivity {
         mGroupName = (TextView) findViewById(R.id.chat_group_name);
         mGroupName.setText(getGroupName());
         mMsgText = (EditText) findViewById(R.id.chat_edit_text);
+
+
+        try{
+            String phoneNumber = getUserName();
+            JSONObject obj = new JSONObject();
+            obj.put("phone_number", phoneNumber);
+        }
+        catch (Exception e)
+        {
+            Log.i("error", "get list of messages");
+        }
 
         //get messages
         messages = getMessages();
@@ -92,18 +107,7 @@ public class ChatActivity extends AppCompatActivity {
 
     public String getUserName()
     {
-        return "User_name1";
-    }
-
-    public ArrayList<String> formatMessages(ArrayList<String> msg)
-    {
-        ArrayList<String> tmp = new ArrayList<String>();
-        for(String str : msg)
-        {
-            String details[] = str.split(":");
-            tmp.add(details[1].trim()+"\n"+details[2]);
-        }
-        return tmp;
+        return getSharedPreferences(PREF_FILE, MODE_PRIVATE).getString(PREF_USERNAME, null);
     }
 
     //add user text
@@ -114,6 +118,16 @@ public class ChatActivity extends AppCompatActivity {
             messages.add("- : " + getUserName() + " : " + mMsgText.getText().toString());
             mMsgText.setText("");
             updateFocus();
+            try{
+                String phoneNumber = getUserName();
+                JSONObject obj = new JSONObject();
+                obj.put("phone_number", phoneNumber);
+                obj.put("message_text", mMsgText.getText().toString());
+            }
+            catch (Exception e)
+            {
+                Log.i("error", "get list of messages");
+            }
         }
     }
 

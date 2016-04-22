@@ -40,4 +40,5 @@
     <string name="round_about">RoundAbout</string>
     <string name="title_activity_chat">ChatActivity</string>
     <string name="title_activity_group_trip_map">Map</string>
+    <string name="title_activity_travel_diary">Map</string>
 </resources>
