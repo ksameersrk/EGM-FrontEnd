@@ -59,6 +59,7 @@ public class GroupTripMap extends FragmentActivity implements OnMapReadyCallback
 
     public void onMapReady(GoogleMap googleMap) {
         mMap = googleMap;
+        Location location;
          double lat= location.getLatitude();
         double lng = location.getLongitude();
         LatLng ll = new LatLng(lat, lng);
