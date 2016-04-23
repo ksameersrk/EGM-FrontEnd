@@ -33,6 +33,14 @@ import android.widget.TextView;
 
 import org.json.JSONObject;
 
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.io.OutputStream;
+import java.net.HttpURLConnection;
+import java.net.MalformedURLException;
+import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -47,18 +55,11 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
     //Shared preference for saving the context of a file
     public static final String PREF_FILE = "PrefFile";
     private static final String PREF_USERNAME = "username";
+    private static final String PREF_NAME = "name";
     private static final String PREF_PASSWORD = "password";/**
      * Id to identity READ_CONTACTS permission request.
      */
     private static final int REQUEST_READ_CONTACTS = 0;
-
-    /**
-     * A dummy authentication store containing known user names and passwords.
-     * TODO: remove after connecting to a real authentication system.
-     */
-    private static final String[] DUMMY_CREDENTIALS = new String[]{
-            "9876543210:hello", "9999999999:world"
-    };
     /**
      * Keep track of the login task to ensure we can cancel it if requested.
      */
@@ -314,39 +315,60 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
 
         @Override
         protected Boolean doInBackground(Void... params) {
-            // TODO: attempt authentication against a network service.
-
+            HttpURLConnection connection = null;
+            Log.i("inback", "came here");
             try {
-                // Simulate network access.
-                Thread.sleep(2000);
-            } catch (InterruptedException e) {
-                return false;
-            }
-
-            /*for (String credential : DUMMY_CREDENTIALS) {
-                String[] pieces = credential.split(":");
-                if (pieces[0].equals(phoneNumber)) {
-                    // Account exists, return true if the password matches.
-                    return pieces[1].equals(password);
-                }
-            }*/
-            //We have phoneNumber, password
-            try{
                 JSONObject obj = new JSONObject();
                 obj.put("op", 1);
                 obj.put("phone", phoneNumber);
                 obj.put("password", password);
-                // TODO: 20/4/16 Send data
+                URL url = new URL("http://192.168.0.106:8000/login");
+                connection = (HttpURLConnection) url.openConnection();
+                connection.setRequestMethod("POST");
+                connection.setDoOutput(true);
+                OutputStream os = connection.getOutputStream();
+                String send = obj.toString();
+                os.write(send.getBytes());
+                os.flush();
+                os.close();
+                InputStream is = connection.getInputStream();
+                BufferedReader br = new BufferedReader(new InputStreamReader(is));
+                StringBuilder sb = new StringBuilder();
+                String line;
+                while ((line = br.readLine()) != null) {
+                    sb.append(line);
+                }
+                String data = sb.toString();
+                br.close();
+                String info[] = data.trim().split(":");
+                Log.i("info", data);
+                if(info.length == 2 && info[0].trim().equals("1"))
+                {
+                    getSharedPreferences(PREF_FILE, MODE_PRIVATE)
+                            .edit()
+                            .putString(PREF_NAME, info[1].trim())
+                            .commit();
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+            } catch (MalformedURLException e) {
+                e.printStackTrace();
+            } catch (IOException e) {
+                e.printStackTrace();
 
             }
             catch (Exception e)
             {
-                Log.v("DB", "doInBackground") ;
+                e.printStackTrace();
             }
-
-            // TODO: return false if not registered 
-            return true;
-            //return false;
+            finally {
+                if (connection != null)
+                    connection.disconnect();
+            }
+            return false;
         }
 
         @Override
