@@ -16,11 +16,5 @@
         android:id="@+id/member_phone_number"
         android:textSize="20sp"/>
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/member_location"
-        android:textSize="20sp"/>
-
 
 </LinearLayout>

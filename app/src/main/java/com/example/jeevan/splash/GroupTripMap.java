@@ -1,9 +1,18 @@
 package com.example.jeevan.splash;
 
+import android.Manifest;
+import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.content.pm.PackageManager;
+import android.location.Location;
+import android.location.LocationManager;
+import android.os.AsyncTask;
+import android.os.Handler;
+import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.FragmentActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -15,12 +24,26 @@ import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
 
+import org.json.JSONObject;
+
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.io.OutputStream;
+import java.net.HttpURLConnection;
+import java.net.MalformedURLException;
+import java.net.URL;
+import java.util.Timer;
+import java.util.TimerTask;
+
 public class GroupTripMap extends FragmentActivity implements OnMapReadyCallback {
 
     private GoogleMap mMap;
     public static final String PREF_FILE = "PrefFile";
     private static final String PREF_GROUP_NAME = "GroupName";
     private static final String PREF_GROUP_DEST = "GroupDestination";
+    private static final String PREF_USERNAME = "username";
     SharedPreferences sp = null;
 
     @Override
@@ -44,6 +67,51 @@ public class GroupTripMap extends FragmentActivity implements OnMapReadyCallback
         }
         t1.setText(gName);
         t2.setText(gDest);
+
+        getData();
+    }
+
+    
+
+
+    public void getData()
+    {
+        new Timer().schedule(new TimerTask() {
+            @Override
+            public void run() {
+                // this code will be executed after 2 seconds  
+                try {
+                    JSONObject obj = new JSONObject();
+                    obj.put("op", "5");
+                    obj.put("phone", getSharedPreferences(PREF_FILE, MODE_PRIVATE).getString(PREF_USERNAME, null));
+                    URL url = new URL("http://192.168.0.106:8000/test");
+                    LocationManager lm = (LocationManager)getSystemService(Context.LOCATION_SERVICE);
+                    Location location;
+                    if (ActivityCompat.checkSelfPermission(GroupTripMap.this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(GroupTripMap.this, Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
+                        // TODO: Consider calling
+                        //    ActivityCompat#requestPermissions
+                        // here to request the missing permissions, and then overriding
+                        //   public void onRequestPermissionsResult(int requestCode, String[] permissions,
+                        //                                          int[] grantResults)
+                        // to handle the case where the user grants the permission. See the documentation
+                        // for ActivityCompat#requestPermissions for more details.
+                        return;
+                    }
+                    Log.i("prelocation", "came here");
+                    location = lm.getLastKnownLocation(LocationManager.NETWORK_PROVIDER);
+                    double longitude = location.getLongitude();
+                    double latitude = location.getLatitude();
+                    Log.i("location", latitude+":"+longitude);
+                    obj.put("lat", latitude+"");
+                    obj.put("lng", longitude+"");
+                    new sendDataInitial().execute(url.toString(), obj.toString());
+                }
+                catch (Exception e) {
+                    e.printStackTrace();
+                }
+            }
+        }, 2000);
+        
     }
 
 
@@ -71,8 +139,19 @@ public class GroupTripMap extends FragmentActivity implements OnMapReadyCallback
     }
     public void exit(View v)
     {
-        finish();
+        try
+        {
+            JSONObject obj = new JSONObject();
+            obj.put("op", "3");
+            obj.put("phone", sp.getString(PREF_USERNAME, null));
+            URL url = new URL("http://192.168.0.106:8000/test");
+            new sendData().execute(url.toString(), obj.toString());
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
         sp.edit().remove(PREF_GROUP_NAME).remove(PREF_GROUP_DEST).commit();
+        finish();
+
     }
     public void chat(View v)
     {
@@ -82,5 +161,93 @@ public class GroupTripMap extends FragmentActivity implements OnMapReadyCallback
     public void callMembers(View v)
     {
         startActivity(new Intent(GroupTripMap.this, MembersActivity.class));
+    }
+
+    class sendData extends AsyncTask<String, String, String> {
+        @Override
+        protected String doInBackground(String... params) {
+            HttpURLConnection connection = null;
+            try {
+                URL url = new URL(params[0]);
+                connection = (HttpURLConnection) url.openConnection();
+                connection.setRequestMethod("POST");
+                connection.setDoOutput(true);
+                OutputStream os = connection.getOutputStream();
+                String send = params[1];
+                os.write(send.getBytes());
+                os.flush();
+                os.close();
+                InputStream is = connection.getInputStream();
+                BufferedReader br = new BufferedReader(new InputStreamReader(is));
+                StringBuilder sb = new StringBuilder();
+                String line;
+                while ((line = br.readLine()) != null) {
+                    sb.append(line);
+                }
+                String data = sb.toString();
+                br.close();
+                return data;
+            } catch (MalformedURLException e) {
+                e.printStackTrace();
+            } catch (IOException e) {
+                e.printStackTrace();
+
+            } finally {
+                if (connection != null)
+                    connection.disconnect();
+            }
+            return null;
+        }
+    }
+
+    class sendDataInitial extends AsyncTask<String, String, String> {
+        @Override
+        protected String doInBackground(String... params) {
+            HttpURLConnection connection = null;
+            try {
+                URL url = new URL(params[0]);
+                connection = (HttpURLConnection) url.openConnection();
+                connection.setRequestMethod("POST");
+                connection.setDoOutput(true);
+                OutputStream os = connection.getOutputStream();
+                String send = params[1];
+                os.write(send.getBytes());
+                os.flush();
+                os.close();
+                InputStream is = connection.getInputStream();
+                BufferedReader br = new BufferedReader(new InputStreamReader(is));
+                StringBuilder sb = new StringBuilder();
+                String line;
+                while ((line = br.readLine()) != null) {
+                    sb.append(line);
+                }
+                String data = sb.toString();
+                br.close();
+                return data;
+            } catch (MalformedURLException e) {
+                e.printStackTrace();
+            } catch (IOException e) {
+                e.printStackTrace();
+
+            } finally {
+                if (connection != null)
+                    connection.disconnect();
+            }
+            return null;
+        }
+
+        @Override
+        protected void onPostExecute(String result)
+        {
+            super.onPostExecute(result);
+            try
+            {
+                JSONObject object = new JSONObject(result);
+                // TODO: 23/4/16 dislay the output from backend to the map 
+                Log.i("map_thing", result);
+            }
+            catch (Exception e) {
+            }
+        }
     }
 }

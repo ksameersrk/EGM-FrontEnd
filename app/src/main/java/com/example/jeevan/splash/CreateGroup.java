@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.database.Cursor;
 import android.location.Address;
 import android.location.Geocoder;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.provider.ContactsContract;
 import android.support.v7.app.AppCompatActivity;
@@ -27,7 +28,14 @@ import android.widget.Toast;
 
 import org.json.JSONObject;
 
+import java.io.BufferedReader;
 import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.io.OutputStream;
+import java.net.HttpURLConnection;
+import java.net.MalformedURLException;
+import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -47,6 +55,7 @@ public class CreateGroup extends AppCompatActivity {
     public static final String PREF_FILE = "PrefFile";
     private static final String PREF_GROUP_NAME = "GroupName";
     private static final String PREF_GROUP_DEST = "GroupDestination";
+    private static final String PREF_USERNAME = "username";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -177,20 +186,19 @@ public class CreateGroup extends AppCompatActivity {
 
             String gName = mGroupName.getText().toString();
             String gDest = mDestination.getText().toString();
-            Intent i = new Intent(CreateGroup.this, GroupTripMap.class);
+            String phoneNumber = getSharedPreferences(PREF_FILE, MODE_PRIVATE).getString(PREF_USERNAME, null);
             getSharedPreferences(PREF_FILE, MODE_PRIVATE)
                     .edit()
                     .putString(PREF_GROUP_NAME, gName)
                     .putString(PREF_GROUP_DEST, gDest)
                     .commit();
-            createJson(gName, gDest);
-            finish();
-            startActivity(i);
+            createJson(gName, gDest, phoneNumber);
+
         }
 
     }
 
-    public void createJson(String gName, String gDest)
+    public void createJson(String gName, String gDest, String phoneNumber)
     {
         ArrayList<String> members = new ArrayList<String>();
         for(String k : selected_contacts)
@@ -198,10 +206,14 @@ public class CreateGroup extends AppCompatActivity {
             members.add(k.split(":")[1].trim());
         }
         try{
+            URL a = new URL("http://192.168.0.106:8000/test");
             JSONObject obj = new JSONObject();
+            obj.put("op", "0");
             obj.put("gname", gName);
             obj.put("gdest", gDest);
             obj.put("members", members.toString());
+            obj.put("phone", phoneNumber);
+            new sendData().execute(a.toString(), obj.toString());
         }
         catch (Exception e)
         {
@@ -290,6 +302,51 @@ public class CreateGroup extends AppCompatActivity {
             return myFilter;
         }
 
+    }
+
+    class sendData extends AsyncTask<String, String, String> {
+        @Override
+        protected String doInBackground(String... params) {
+            HttpURLConnection connection = null;
+            try {
+                URL url = new URL(params[0]);
+                connection = (HttpURLConnection) url.openConnection();
+                connection.setRequestMethod("POST");
+                connection.setDoOutput(true);
+                OutputStream os = connection.getOutputStream();
+                String send = params[1];
+                os.write(send.getBytes());
+                os.flush();
+                os.close();
+                InputStream is = connection.getInputStream();
+                BufferedReader br = new BufferedReader(new InputStreamReader(is));
+                StringBuilder sb = new StringBuilder();
+                String line;
+                while ((line = br.readLine()) != null) {
+                    sb.append(line);
+                }
+                String data = sb.toString();
+                br.close();
+                return data;
+            } catch (MalformedURLException e) {
+                e.printStackTrace();
+            } catch (IOException e) {
+                e.printStackTrace();
+
+            } finally {
+                if (connection != null)
+                    connection.disconnect();
+            }
+            return null;
+        }
+
+        @Override
+        protected void onPostExecute(String result)
+        {
+            super.onPostExecute(result);
+            finish();
+            startActivity(new Intent(CreateGroup.this, GroupTripMap.class));
+        }
     }
 
 }
