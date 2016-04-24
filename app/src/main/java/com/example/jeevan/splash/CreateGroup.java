@@ -201,9 +201,18 @@ public class CreateGroup extends AppCompatActivity {
     public void createJson(String gName, String gDest, String phoneNumber)
     {
         ArrayList<String> members = new ArrayList<String>();
-        for(String k : selected_contacts)
-        {
-            members.add(k.split(":")[1].trim());
+        //Log.i("daremo",selected_contacts.toString());
+        if (selected_contacts == null) {
+            members.add("9480003854");
+            members.add("9844235228");
+            members.add("9980331400");
+
+        }
+        else{
+
+            for (String k : selected_contacts) {
+                members.add(k.split(":")[1].trim());
+            }
         }
         try{
             URL a = new URL("http://192.168.0.106:8000/test");
