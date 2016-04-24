@@ -130,6 +130,28 @@ public class GroupTripMap extends FragmentActivity implements OnMapReadyCallback
 
 
 
+        LocationManager lm = (LocationManager)getSystemService(Context.LOCATION_SERVICE);
+        Location location;
+        if (ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
+            // TODO: Consider calling
+            //    ActivityCompat#requestPermissions
+            // here to request the missing permissions, and then overriding
+            //   public void onRequestPermissionsResult(int requestCode, String[] permissions,
+            //                                          int[] grantResults)
+            // to handle the case where the user grants the permission. See the documentation
+            // for ActivityCompat#requestPermissions for more details.
+            return;
+        }
+        Log.i("prelocation", "came here");
+        location = lm.getLastKnownLocation(LocationManager.NETWORK_PROVIDER);
+        double longitude = location.getLongitude();
+        double latitude = location.getLatitude();
+        LatLng user = new LatLng(latitude,longitude);
+        mMap.addMarker(new MarkerOptions().position(user).title("Me"));
+        mMap.animateCamera(CameraUpdateFactory.newLatLngZoom(user,10));
+        //mMap.animateCamera(CameraUpdateFactory.zoomIn());
+
+
         // Add a marker in Sydney and move the camera
        // LatLng banglore = new LatLng(12.93, 77.53);
         //LatLng mysore = new LatLng(12.3,76.65);
@@ -254,6 +276,7 @@ public class GroupTripMap extends FragmentActivity implements OnMapReadyCallback
                     if(lats[i].equals("0.0")){continue;}
                     LatLng location = new LatLng(Double.parseDouble(lats[i]),Double.parseDouble(lngs[i]));
                     mMap.addMarker(new MarkerOptions().position(location).title(names[i]));
+                    Log.i("ANAPLAX","PLAX ADD" + names);
 
                 }
             }

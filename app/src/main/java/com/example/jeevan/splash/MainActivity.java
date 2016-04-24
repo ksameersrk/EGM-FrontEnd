@@ -272,6 +272,7 @@ public class MainActivity extends AppCompatActivity {
             try{
                 JSONObject object = new JSONObject(result);
                 String no = object.getString("status");
+                Log.i("sw32","HARRO");
 
                 Log.i("status", no+"");
                 if(Integer.parseInt(no) == 1)
