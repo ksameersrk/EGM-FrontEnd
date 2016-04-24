@@ -10,7 +10,6 @@ import android.location.LocationManager;
 import android.os.AsyncTask;
 import android.os.Build;
 import android.os.Bundle;
-import android.support.annotation.IntegerRes;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v4.app.ActivityCompat;
@@ -273,16 +272,18 @@ public class MainActivity extends AppCompatActivity {
             try{
                 JSONObject object = new JSONObject(result);
                 String no = object.getString("status");
-                String gname = object.getString("name");
-                String gdest = object.getString("dest");
-                getSharedPreferences(PREF_FILE, MODE_PRIVATE)
-                        .edit()
-                        .putString(PREF_GROUP_DEST, gdest)
-                        .putString(PREF_GROUP_NAME, gname)
-                        .commit();
+
                 Log.i("status", no+"");
                 if(Integer.parseInt(no) == 1)
+
                 {
+                    String gname = object.getString("name");
+                    String gdest = object.getString("dest");
+                    getSharedPreferences(PREF_FILE, MODE_PRIVATE)
+                            .edit()
+                            .putString(PREF_GROUP_DEST, gdest)
+                            .putString(PREF_GROUP_NAME, gname)
+                            .commit();
                     isPartOfGroup = true;
                 }
                 else
